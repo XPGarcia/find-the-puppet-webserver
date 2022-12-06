@@ -1,0 +1,72 @@
+﻿type;title;body;quickPlay
+law;;Construir una estatua a Abdalá Bucaram;false
+law;;Cada tercer viernes de todos los meses es feriado nacional;false
+law;;Usar zapatos rojos es vestimenta oficial de la asamblea;false
+law;;El encebollado tiene el precio único de $2.50 en todo el país;false
+law;;Los reality shows están prohibidos en todos los canales nacionales;false
+law;;Robarse el dinero del gobierno está permitido siempre y cuando se construyan carreteras ;false
+law;;El switch debe tener un precio único de $3.00;false
+law;;Todos los transportes interprovinciales deberán transmitir películas durante los viajes.;false
+law;;El bolón es declarado patrimonio cultural del Ecuador;false
+law;;Todos los hogares deberán tener un gato como mascota obligatoriamente;false
+law;;Solo se puede usar internet por 20 minutos;false
+law;;Es ilegal transportar corvinas de forma sospechosa;false
+law;;El uniforme oficial de la policía es de power rangers fuerza salvaje;false
+law;;Está prohibido quedarse sin gasolina;false
+law;;Es ilegal tomar un taxi si estás usando una camisa amarilla;false
+law;;Está prohibido pasearse enfrente de una UPC montando patines;false
+law;;Está prohibido ir al baño después de las 22:00 pm;false
+law;;Todas las personas con nombre José deben ser renombradas;false
+law;;Es obligatorio llevar una botella de trago cuando te invitan a una fiesta;false
+law;;Atar a una jirafa en una señal de tránsito es ilegal;false
+law;;Todos los mensajes enviados en territorio nacional deben llevar un emoji;false
+law;;Está prohibido consumir brownies de orégano con el estómago vacío;false
+law;;Tu mamá compro el reloj. Desde ahora en adelante sus suegras deben comprarles un reloj;false
+law;;Las iguanas son amigas no comida;false
+law;Ley libre;Crea tu propia ley y proponla para votación;false
+law;Ley libre;Crea tu propia ley y proponla para votación;false
+law;Ley libre;Crea tu propia ley y proponla para votación;false
+law;Ley libre;Crea tu propia ley y proponla para votación;false
+law;Ley libre;Crea tu propia ley y proponla para votación;false
+law;Ley libre;Crea tu propia ley y proponla para votación;false
+law;Ley libre;Crea tu propia ley y proponla para votación;false
+law;Ley libre;Crea tu propia ley y proponla para votación;false
+law;Ley libre;Crea tu propia ley y proponla para votación;false
+action;¡Golpe de estado!;El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones;false
+action;¡Golpe de estado!;El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones;false
+action;¡Golpe de estado!;El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones;false
+action;¡Investigación por corrupción!;El participante no podrá crear leyes nuevas;false
+action;¡Investigación por corrupción!;El participante no podrá crear leyes nuevas;false
+action;Acción de protección;Protege a un jugador contra expulsión por una ronda. Te puedes elegir a ti mismo;true
+action;Acción de protección;Protege a un jugador contra expulsión por una ronda. Te puedes elegir a ti mismo;false
+action;Poder presidencial;Aprobar una ley sin el voto de los otros participantes;false
+action;Poder presidencial;Aprobar una ley sin el voto de los otros participantes;false
+action;¡MK ultra!;El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición;false
+action;¡MK ultra!;El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición;false
+action;Consulta popular;Evita que se ejecute una carta de acción inmediatamente. En su lugar, solicita votación para aprobar o rechazar la acción;true
+action;Consulta popular;Evita que se ejecute una carta de acción inmediatamente. En su lugar, solicita votación para aprobar o rechazar la acción;true
+action;¡Fraude!;Elimina una ley que haya sido aprobada;false
+action;¡Fraude!;Elimina una ley que haya sido aprobada;false
+action;Paquetazo;Si se aprueba una ley puedes solicitar inmediatamente aprobar una de tus leyes;false
+action;Paquetazo;Si se aprueba una ley puedes solicitar inmediatamente aprobar una de tus leyes;false
+action;Sabiduría criolla;Mira las cartas de un jugador, intercambia una carta tuya por una de ese jugador. Si tú no tienes cartas, no debes dar ninguna carta a cambio;false
+action;Sabiduría criolla;Mira las cartas de un jugador, intercambia una carta tuya por una de ese jugador. Si tú no tienes cartas, no debes dar ninguna carta a cambio;false
+action;¡Paro nacional!;Los jugadores verán imposibilitada las opciones de robar cartas durante un turno;false
+action;¡Paro nacional!;Los jugadores verán imposibilitada las opciones de robar cartas durante un turno;false
+action;Cambio de patrimonio;Los jugadores deberán cambiar sus cartas con el jugador de la derecha. Las cartas de identidad no se cambiarán;false
+action;Cambio de patrimonio;Los jugadores deberán cambiar sus cartas con el jugador de la derecha. Las cartas de identidad no se cambiarán;false
+action;Congelación bancaria;El jugador que usted escoja no podrá robar cartas del mazo hasta pasar un turno;false
+action;Congelación bancaria;El jugador que usted escoja no podrá robar cartas del mazo hasta pasar un turno;false
+action;¡Nuevo referéndum!;Todas las leyes aprobadas se anulan y comienzan de 0;false
+action;Inversión arriesgada;Baraja cartas de tu mano en la baraja. Coge la misma cantidad de cartas que introdujiste ;false
+action;Inversión arriesgada;Baraja cartas de tu mano en la baraja. Coge la misma cantidad de cartas que introdujiste ;false
+action;Verdugo;Solicita expulsar a alguien del juego. Tu voto vale x3 durante esta votación;false
+action;Verdugo;Solicita expulsar a alguien del juego. Tu voto vale x3 durante esta votación;false
+action;Extorsión al presidente;El presidente debe meter a la baraja todas sus cartas de la mano o abandonar el puesto de presidente;false
+action;Extorsión al presidente;El presidente debe meter a la baraja todas sus cartas de la mano o abandonar el puesto de presidente;false
+action;Soborno;Regala una carta a un jugador. Cuando llegue el turno de ese jugador, te deberá ceder el turno;false
+action;Soborno;Regala una carta a un jugador. Cuando llegue el turno de ese jugador, te deberá ceder el turno;false
+action;Regreso del Abdalá;Trae de regreso a un jugador que haya sido eliminado del juego. El siguiente turno es de este jugador;false
+action;Rompiendo el sistema;Busca dos cartas de Ley libre en la baraja y ponlas en tu mano. Si no hay dos, selecciona una ley aleatoria;false
+action;Rompiendo el sistema;Busca dos cartas de Ley libre en la baraja y ponlas en tu mano. Si no hay dos, selecciona una ley aleatoria;false
+action;Rompiendo el sistema;Busca dos cartas de Ley libre en la baraja y ponlas en tu mano. Si no hay dos, selecciona una ley aleatoria;false
