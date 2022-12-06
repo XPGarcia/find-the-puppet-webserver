@@ -6,7 +6,7 @@ import { environment } from './configs';
 
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
-const mongoUri = `mongodb://database/${environment.mongoose.db}`;
+const mongoUri = `mongodb://${environment.mongoose.user}:${environment.mongoose.password}@database`;
 
 const start = async () => {
   try {

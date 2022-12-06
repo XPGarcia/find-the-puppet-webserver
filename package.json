@@ -10,7 +10,9 @@
     "start": "npm run build && node dist/index.js",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "prettier-watch": "onchange 'src/**/*.ts' -- prettier --write"
+    "prettier-watch": "onchange 'src/**/*.ts' -- prettier --write",
+    "docker:start": "docker-compose up --build -d",
+    "db:seed": "npx ts-node src/database/seeders/card.seeder.ts"
   },
   "keywords": [],
   "author": "",

@@ -13,7 +13,7 @@ services:
       MONGO_INITDB_HOST: database
       MONGO_INITDB_ROOT_USERNAME: mongo
       MONGO_INITDB_ROOT_PASSWORD: password
-      MONGO_INITDB_DATABASE: test
+      MONGO_INITDB_DATABASE: titere-test-db
     ports:
       - '3000:3000'
     volumes:
@@ -33,7 +33,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongo
       MONGO_INITDB_ROOT_PASSWORD: password
-      MONGO_INITDB_DATABASE: test
+      MONGO_INITDB_DATABASE: titere-test-db
     ports:
       - 27017:27017
     networks:
