@@ -1,12 +1,12 @@
 import * as express from 'express';
 import { json } from 'body-parser';
-import { cardsRouter, gameRouter } from './routes';
+import { deckRouter, gameRouter } from './routes';
 
 const app = express();
 
 app.use(json());
 
-app.use(cardsRouter);
+app.use(deckRouter);
 app.use(gameRouter);
 
 app.get('/', (req, res) => {

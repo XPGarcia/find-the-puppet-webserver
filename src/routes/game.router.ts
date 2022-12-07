@@ -1,45 +1,43 @@
 import * as express from 'express';
-import { random, shuffle } from '../utils';
-import { Game, CardInGame } from '../types';
-import { DeckService, GameService } from '../services';
+import { Game } from '../types';
+import { GameService } from '../services';
+import { GameMapper } from '../mappers';
 
 const router = express.Router();
 
 router.post('/api/game/start', async (req, res) => {
   const { numberOfPlayers, playersIds } = req.body;
 
-  const deck = await DeckService.newDeck();
-
-  const gpOne = random<string>(playersIds);
-  const gpTwo = random<string>(playersIds.filter((id) => id !== gpOne));
-  const governmentPlayers = [gpOne, gpTwo];
-
-  const oppositionPlayers = playersIds.filter((id) => id !== gpOne && id !== gpTwo);
-
-  const playerAsPresident = random<string>(playersIds);
-
-  const presidentIndex = (playersIds as string[]).findIndex(
-    (playerId) => playerId === playerAsPresident
-  );
-
-  const firstPlayerIndex = presidentIndex + 1 === playersIds.length ? 0 : presidentIndex + 1;
-  const playerInTurn = playersIds[firstPlayerIndex];
+  const { deck, playerInTurn, playerAsPresident, governmentPlayers, oppositionPlayers } =
+    await GameService.setup(playersIds);
 
   const game: Game = {
     id: '1',
     numberOfPlayers,
+    playersIds,
     playerInTurn,
     playerAsPresident,
     turnsPlayed: 0,
     roundsPlayed: 0,
+    roundsForNextElections: 4,
     governmentPlayers,
     oppositionPlayers,
-    deck: shuffle<CardInGame>(deck)
+    deck
   };
 
   GameService.setGame(game);
 
-  res.status(200).send({ data: GameService.currentGame });
+  const response = GameMapper.toResponse(GameService.currentGame);
+
+  res.status(200).send({ data: response });
+});
+
+router.post('/api/game/endTurn', async (req, res) => {
+  GameService.endTurn();
+
+  const response = GameMapper.toResponse(GameService.currentGame);
+
+  res.status(200).send({ data: response });
 });
 
 export { router as gameRouter };

@@ -1,18 +1,20 @@
+import { Card } from './card';
+
 export class CardInGame {
-  cardId: string;
+  card: Card;
   playerId?: string;
   inDeck: boolean;
 
   constructor({
-    cardId,
+    card,
     playerId,
     inDeck = true
   }: {
-    cardId: string;
+    card: Card;
     playerId?: string;
     inDeck?: boolean;
   }) {
-    this.cardId = cardId;
+    this.card = card;
     this.playerId = playerId;
     this.inDeck = inDeck;
   }
