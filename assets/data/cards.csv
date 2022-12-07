@@ -38,7 +38,7 @@ action;¡Golpe de estado!;El presidente deja el cargo y el que tiene la carta se
 action;¡Investigación por corrupción!;El participante no podrá crear leyes nuevas;false
 action;¡Investigación por corrupción!;El participante no podrá crear leyes nuevas;false
 action;Acción de protección;Protege a un jugador contra expulsión por una ronda. Te puedes elegir a ti mismo;true
-action;Acción de protección;Protege a un jugador contra expulsión por una ronda. Te puedes elegir a ti mismo;false
+action;Acción de protección;Protege a un jugador contra expulsión por una ronda. Te puedes elegir a ti mismo;true
 action;Poder presidencial;Aprobar una ley sin el voto de los otros participantes;false
 action;Poder presidencial;Aprobar una ley sin el voto de los otros participantes;false
 action;¡MK ultra!;El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición;false

@@ -1,17 +1,15 @@
 import mongoose from 'mongoose';
-import { environment } from '../../configs';
-import { Card } from '../../models';
+import { CardModel, CardDoc } from '../../models';
 import * as fs from 'fs';
 import { parse } from 'csv-parse';
+import { MongoUri } from '../config';
 
-const mongoUri = `mongodb://${environment.mongoose.user}:${environment.mongoose.password}@database`;
-
-const cards = [];
+const cards: CardDoc[] = [];
 
 const seed = async () => {
   try {
     mongoose.set('strictQuery', false);
-    await mongoose.connect(mongoUri);
+    await mongoose.connect(MongoUri);
 
     const cardsPending = cards.map(async (card) => await card.save());
     await Promise.all(cardsPending);
@@ -27,7 +25,7 @@ const seed = async () => {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const parseCard = (row: any) => {
   const quickPlay = row[3].trim().toLowerCase() === 'true' ? true : false;
-  const card = Card.build({
+  const card = CardModel.build({
     type: row[0].trim().toLowerCase(),
     title: row[1].trim(),
     body: row[2].trim(),

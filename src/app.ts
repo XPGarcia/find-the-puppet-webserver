@@ -1,9 +1,13 @@
 import * as express from 'express';
 import { json } from 'body-parser';
+import { cardsRouter, gameRouter } from './routes';
 
 const app = express();
 
 app.use(json());
+
+app.use(cardsRouter);
+app.use(gameRouter);
 
 app.get('/', (req, res) => {
   res.send('Server is up and running!');

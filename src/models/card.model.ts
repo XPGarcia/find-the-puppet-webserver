@@ -5,7 +5,7 @@ interface CardModel extends mongoose.Model<CardDoc> {
   build(card: Card): CardDoc;
 }
 
-interface CardDoc extends mongoose.Document {
+export interface CardDoc extends mongoose.Document {
   type: CardType;
   title?: string;
   body: string;
@@ -30,8 +30,6 @@ const cardSchema = new mongoose.Schema({
     required: true
   }
 });
-cardSchema.statics.build = (card: Card) => new Card(card);
+cardSchema.statics.build = (card: Card) => new CardModel(card);
 
-const Card = mongoose.model<CardDoc, CardModel>('Card', cardSchema);
-
-export { Card };
+export const CardModel = mongoose.model<CardDoc, CardModel>('Card', cardSchema);
