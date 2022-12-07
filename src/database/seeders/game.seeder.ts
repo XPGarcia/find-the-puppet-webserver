@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { CardModel, CardDoc } from '../../models';
+import { CardModel, CardDoc } from '../../repositories';
 import * as fs from 'fs';
 import { parse } from 'csv-parse';
 import { MongoUri } from '../config';

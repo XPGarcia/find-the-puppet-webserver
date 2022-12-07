@@ -1,20 +1,23 @@
 import * as express from 'express';
+import { CardMapper } from '../mappers';
 import { DeckService } from '../services';
 
 const router = express.Router();
 
 router.post('/api/deck/draw', async (req, res) => {
-  const { playerId, quantity } = req.body;
+  const { quantity } = req.body;
 
-  const cards = DeckService.draw({ playerId, quantity });
+  const cards = DeckService.draw({ quantity });
 
-  res.status(200).send({ data: cards });
+  const response = CardMapper.toResponses(cards);
+
+  res.status(200).send({ data: response });
 });
 
 router.post('/api/deck/drawByIds', async (req, res) => {
-  const { playerId, cardsIds } = req.body;
+  const { cardsIds } = req.body;
 
-  const cards = DeckService.drawByIds({ playerId, cardsIds });
+  const cards = DeckService.drawByIds(cardsIds);
 
   res.status(200).send({ data: cards });
 });

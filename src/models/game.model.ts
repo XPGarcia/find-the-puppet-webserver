@@ -1,4 +1,4 @@
-import { CardInGame } from './card-in-game';
+import { Card } from './card.model';
 
 export class Game {
   id: string;
@@ -11,7 +11,7 @@ export class Game {
   roundsForNextElections: number;
   governmentPlayers: string[];
   oppositionPlayers: string[];
-  deck: CardInGame[];
+  deck: Card[];
 
   constructor({
     id,
@@ -36,7 +36,7 @@ export class Game {
     roundsForNextElections: number;
     governmentPlayers: string[];
     oppositionPlayers: string[];
-    deck: CardInGame[];
+    deck: Card[];
   }) {
     this.id = id;
     this.numberOfPlayers = numberOfPlayers;

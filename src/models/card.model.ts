@@ -1,35 +1,38 @@
-import mongoose from 'mongoose';
-import { Card, CardType } from '../types';
+const CardTypes = {
+  law: 'law',
+  action: 'action'
+} as const;
 
-interface CardModel extends mongoose.Model<CardDoc> {
-  build(card: Card): CardDoc;
-}
+export type CardType = typeof CardTypes[keyof typeof CardTypes];
 
-export interface CardDoc extends mongoose.Document {
+export class Card {
+  id?: string;
   type: CardType;
   title?: string;
   body: string;
   quickPlay: boolean;
-}
+  inDeck?: boolean;
 
-const cardSchema = new mongoose.Schema({
-  type: {
-    type: String,
-    required: true
-  },
-  title: {
-    type: String,
-    required: false
-  },
-  body: {
-    type: String,
-    required: true
-  },
-  quickPlay: {
-    type: Boolean,
-    required: true
+  constructor({
+    id,
+    type,
+    title,
+    body,
+    quickPlay,
+    inDeck = true
+  }: {
+    id?: string;
+    type: CardType;
+    title?: string;
+    body: string;
+    quickPlay: boolean;
+    inDeck?: boolean;
+  }) {
+    this.id = id;
+    this.type = type;
+    this.title = title;
+    this.body = body;
+    this.quickPlay = quickPlay;
+    this.inDeck = inDeck;
   }
-});
-cardSchema.statics.build = (card: Card) => new CardModel(card);
-
-export const CardModel = mongoose.model<CardDoc, CardModel>('Card', cardSchema);
+}

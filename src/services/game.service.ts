@@ -1,5 +1,5 @@
 import { random, shuffle } from '../utils';
-import { CardInGame, Game } from '../types';
+import { Game, Card } from '../models';
 import { DeckService } from './deck.service';
 
 export class GameService {
@@ -28,7 +28,7 @@ export class GameService {
     const playerInTurn = playersIds[firstPlayerIndex];
 
     return {
-      deck: shuffle<CardInGame>(deck),
+      deck: shuffle<Card>(deck),
       playerInTurn,
       playerAsPresident,
       governmentPlayers,
@@ -36,13 +36,10 @@ export class GameService {
     };
   }
 
-  static updateDeckAfterDraw(playerId: string, cardsDrawn: CardInGame[]) {
+  static updateDeckAfterDraw(cardsDrawn: Card[]) {
     this.currentGame.deck.forEach((cardInDeck) => {
       cardsDrawn.forEach((cardDrawn) => {
-        if (cardInDeck === cardDrawn) {
-          cardInDeck.inDeck = false;
-          cardInDeck.playerId = playerId;
-        }
+        if (cardInDeck === cardDrawn) cardInDeck.inDeck = false;
       });
     });
   }

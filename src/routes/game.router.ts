@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { Game } from '../types';
+import { Game } from '../models';
 import { GameService } from '../services';
 import { GameMapper } from '../mappers';
 

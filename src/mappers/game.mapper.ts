@@ -1,5 +1,5 @@
-import { GameResponse } from 'src/dtos';
-import { Game } from '../types';
+import { GameResponse } from '../dtos';
+import { Game } from '../models';
 
 export class GameMapper {
   static toResponse(game: Game): GameResponse {
