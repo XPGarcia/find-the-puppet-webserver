@@ -10,7 +10,8 @@ export class GameMapper {
       playerAsPresident: game.playerAsPresident,
       turnsPlayed: game.turnsPlayed,
       roundsPlayed: game.roundsPlayed,
-      roundsForNextElections: game.roundsForNextElections
+      roundsForNextElections: game.roundsForNextElections,
+      approvedLaws: game.approvedLaws
     };
   }
 }

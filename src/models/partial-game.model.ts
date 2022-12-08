@@ -1,19 +1,19 @@
 import { ApprovedLaw } from './approved-law.model';
 import { Card } from './card.model';
 
-export class Game {
-  id: string;
-  numberOfPlayers: number;
-  playersIds: string[];
-  playerInTurn: string;
-  playerAsPresident: string;
-  turnsPlayed: number;
-  roundsPlayed: number;
-  roundsForNextElections: number;
-  governmentPlayers: string[];
-  oppositionPlayers: string[];
-  deck: Card[];
-  approvedLaws: ApprovedLaw[];
+export class PartialGame {
+  id?: string;
+  numberOfPlayers?: number;
+  playersIds?: string[];
+  playerInTurn?: string;
+  playerAsPresident?: string;
+  turnsPlayed?: number;
+  roundsPlayed?: number;
+  roundsForNextElections?: number;
+  governmentPlayers?: string[];
+  oppositionPlayers?: string[];
+  deck?: Card[];
+  approvedLaws?: ApprovedLaw[];
 
   constructor({
     id,
@@ -29,18 +29,18 @@ export class Game {
     deck,
     approvedLaws
   }: {
-    id: string;
-    numberOfPlayers: number;
-    playersIds: string[];
-    playerInTurn: string;
-    playerAsPresident: string;
-    turnsPlayed: number;
-    roundsPlayed: number;
-    roundsForNextElections: number;
-    governmentPlayers: string[];
-    oppositionPlayers: string[];
-    deck: Card[];
-    approvedLaws: ApprovedLaw[];
+    id?: string;
+    numberOfPlayers?: number;
+    playersIds?: string[];
+    playerInTurn?: string;
+    playerAsPresident?: string;
+    turnsPlayed?: number;
+    roundsPlayed?: number;
+    roundsForNextElections?: number;
+    governmentPlayers?: string[];
+    oppositionPlayers?: string[];
+    deck?: Card[];
+    approvedLaws?: ApprovedLaw[];
   }) {
     this.id = id;
     this.numberOfPlayers = numberOfPlayers;

@@ -1,12 +1,12 @@
 import { random, shuffle } from '../utils';
-import { Game, Card } from '../models';
+import { Game, Card, PartialGame } from '../models';
 import { DeckService } from './deck.service';
 
 export class GameService {
   static currentGame: Game;
 
-  static setGame(game: Game) {
-    this.currentGame = { ...game };
+  static setGame(partialGame: PartialGame) {
+    this.currentGame = { ...this.currentGame, ...partialGame };
   }
 
   static async setup(playersIds: string[]) {

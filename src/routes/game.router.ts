@@ -22,7 +22,8 @@ router.post('/api/game/start', async (req, res) => {
     roundsForNextElections: 4,
     governmentPlayers,
     oppositionPlayers,
-    deck
+    deck,
+    approvedLaws: []
   };
 
   GameService.setGame(game);
