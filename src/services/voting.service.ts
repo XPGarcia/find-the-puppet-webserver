@@ -16,7 +16,7 @@ export class VotingService {
 
   static approveLaw(playerId: string, cardId: string) {
     const approvedLaw = new ApprovedLaw({ playerId, cardId });
-    const approvedLaws = GameService.currentGame.approvedLaws;
+    const approvedLaws = [...GameService.currentGame.approvedLaws];
     approvedLaws.push(approvedLaw);
     GameService.setGame({ approvedLaws });
   }

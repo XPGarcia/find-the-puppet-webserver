@@ -26,7 +26,7 @@ router.post('/api/game/start', async (req, res) => {
     approvedLaws: []
   };
 
-  GameService.setGame(game);
+  GameService.setGame({ ...game });
 
   const response = GameMapper.toResponse(GameService.currentGame);
 

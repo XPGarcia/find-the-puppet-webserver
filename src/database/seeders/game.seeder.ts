@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { CardModel, CardDoc } from '../../repositories';
+import { CardRepository, CardDoc } from '../../repositories';
 import * as fs from 'fs';
 import { parse } from 'csv-parse';
 import { MongoUri } from '../config';
@@ -25,7 +25,7 @@ const seed = async () => {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const parseCard = (row: any) => {
   const quickPlay = row[3].trim().toLowerCase() === 'true' ? true : false;
-  const card = CardModel.build({
+  const card = CardRepository.build({
     type: row[0].trim().toLowerCase(),
     title: row[1].trim(),
     body: row[2].trim(),

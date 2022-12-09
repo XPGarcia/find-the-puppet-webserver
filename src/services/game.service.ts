@@ -3,7 +3,20 @@ import { Game, Card, PartialGame } from '../models';
 import { DeckService } from './deck.service';
 
 export class GameService {
-  static currentGame: Game;
+  static currentGame: Game = {
+    id: '1',
+    numberOfPlayers: 0,
+    playersIds: [],
+    playerInTurn: '',
+    playerAsPresident: '',
+    turnsPlayed: 0,
+    roundsPlayed: 0,
+    roundsForNextElections: 0,
+    governmentPlayers: [],
+    oppositionPlayers: [],
+    deck: [],
+    approvedLaws: []
+  };
 
   static setGame(partialGame: PartialGame) {
     this.currentGame = { ...this.currentGame, ...partialGame };
