@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { json } from 'body-parser';
-import { deckRouter, gameRouter } from './routes';
+import { deckRouter, gameRouter, cardActionRouter } from './routes';
 
 const app = express();
 
@@ -8,6 +8,7 @@ app.use(json());
 
 app.use(deckRouter);
 app.use(gameRouter);
+app.use(cardActionRouter);
 
 app.get('/', (req, res) => {
   res.send('Server is up and running!');

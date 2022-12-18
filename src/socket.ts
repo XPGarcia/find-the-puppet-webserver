@@ -1,35 +1,31 @@
 import { Server } from 'socket.io';
+import { CardAction } from './constants/card-action.constant';
+import { Game } from './models';
 
 interface ServerToClientEvents {
-  noArg: () => void;
-  basicEmit: (a: number, b: string, c: Buffer) => void;
-  withAck: (d: string, callback: (e: number) => void) => void;
+  gameStatus: (game: Game) => void;
+  message: (message: string) => void;
 }
 
 interface ClientToServerEvents {
-  hello: () => void;
-}
-
-interface InterServerEvents {
-  ping: () => void;
+  execute: (action: CardAction) => void;
 }
 
 interface SocketData {
-  name: string;
-  age: number;
+  game: Game;
 }
 
 interface Socket {
-  io: Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>;
+  io: Server<ClientToServerEvents, ServerToClientEvents, null, SocketData>;
+  connect: (httpServer: any) => void;
 }
 
-export const socket: Socket = { io: null };
-
-export const connect = (httpServer: any) => {
-  socket.io = new Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>(
-    httpServer,
-    {
-      /* options */
-    }
-  );
+export const socket: Socket = {
+  io: null,
+  connect: (httpServer: any) => {
+    socket.io = new Server<ClientToServerEvents, ServerToClientEvents, null, SocketData>(
+      httpServer,
+      {}
+    );
+  }
 };

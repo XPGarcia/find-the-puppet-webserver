@@ -2,6 +2,7 @@ import * as express from 'express';
 import { Game } from '../models';
 import { GameService } from '../services';
 import { GameMapper } from '../mappers';
+import { socket } from '../socket';
 
 const router = express.Router();
 
@@ -29,6 +30,8 @@ router.post('/api/game/start', async (req, res) => {
   GameService.setGame({ ...game });
 
   const response = GameMapper.toResponse(GameService.currentGame);
+
+  socket.io.emit('gameStatus', GameService.currentGame);
 
   res.status(200).send({ data: response });
 });
