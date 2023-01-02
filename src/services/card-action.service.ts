@@ -1,3 +1,4 @@
+import { Room } from 'src/models/room.model';
 import {
   CardAction,
   CorruptionInvestigationAction,
@@ -7,30 +8,30 @@ import {
 import { GameService } from './game.service';
 
 export class CardActionService {
-  static execute(cardAction: CardAction) {
+  static execute(room: Room, cardAction: CardAction) {
     switch (cardAction.name) {
       case 'MKUltra':
-        this.mkUltra(cardAction);
+        this.mkUltra(room, cardAction);
     }
   }
 
-  static mkUltra(cardAction: MKUltraAction) {
-    const governmentPlayer = GameService.currentGame.governmentPlayers.find(
+  static mkUltra(room: Room, cardAction: MKUltraAction) {
+    const governmentPlayer = room.game.governmentPlayers.find(
       (playerId) => playerId === cardAction.payload.selectedPlayerId
     );
 
     return governmentPlayer ? 'government' : 'opposition';
   }
 
-  static coup(cardAction: CoupAction) {
+  static coup(room: Room, cardAction: CoupAction) {
     const playerId = cardAction.payload.playerId;
-    GameService.setGame({ playerAsPresident: playerId });
+    GameService.setGame(room, { playerAsPresident: playerId });
   }
 
-  static corruptionInvestigation(cardAction: CorruptionInvestigationAction) {
+  static corruptionInvestigation(room: Room, cardAction: CorruptionInvestigationAction) {
     const selectedPlayerId = cardAction.payload.selectedPlayerId;
-    const blockedPlayers = [...GameService.currentGame.blockedPlayers];
+    const blockedPlayers = [...room.game.blockedPlayers];
     blockedPlayers.push(selectedPlayerId);
-    GameService.setGame({ blockedPlayers });
+    GameService.setGame(room, { blockedPlayers });
   }
 }

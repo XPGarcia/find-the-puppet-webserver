@@ -1,25 +1,12 @@
 import { random, shuffle } from '../utils';
-import { Game, Card, PartialGame } from '../models';
+import { Card, Game, PartialGame } from '../models';
 import { DeckService } from './deck.service';
+import { Room } from 'src/models/room.model';
 
 export class GameService {
-  static currentGame: Game = {
-    id: '1',
-    numberOfPlayers: 0,
-    playersIds: [],
-    playerInTurn: '',
-    playerAsPresident: '',
-    turnsPlayed: 0,
-    roundsPlayed: 0,
-    roundsForNextElections: 0,
-    governmentPlayers: [],
-    oppositionPlayers: [],
-    deck: [],
-    approvedLaws: []
-  };
-
-  static setGame(partialGame: PartialGame) {
-    this.currentGame = { ...this.currentGame, ...partialGame };
+  static setGame(room: Room, partialGame: PartialGame) {
+    const newGame = { ...room.game, ...partialGame };
+    room.setGame(newGame);
   }
 
   static async setup(playersIds: string[]) {
@@ -49,37 +36,35 @@ export class GameService {
     };
   }
 
-  static updateDeckAfterDraw(cardsDrawn: Card[]) {
-    this.currentGame.deck.forEach((cardInDeck) => {
+  static updateDeckAfterDraw(game: Game, cardsDrawn: Card[]) {
+    game.deck.forEach((cardInDeck) => {
       cardsDrawn.forEach((cardDrawn) => {
         if (cardInDeck === cardDrawn) cardInDeck.inDeck = false;
       });
     });
   }
 
-  static endTurn() {
-    const playersIds = this.currentGame.playersIds;
-    const playerIndex = playersIds.findIndex((id) => id === this.currentGame.playerInTurn);
+  static endTurn(room: Room) {
+    const game = room.game;
+    const playersIds = game.playersIds;
+    const playerIndex = playersIds.findIndex((id) => id === game.playerInTurn);
 
     const nextPlayerIndex = playerIndex + 1 === playersIds.length ? 0 : playerIndex + 1;
     const playerInTurn = playersIds[nextPlayerIndex];
 
-    const turnsPlayed = this.currentGame.turnsPlayed + 1;
+    const turnsPlayed = game.turnsPlayed + 1;
     const roundsPlayed =
-      turnsPlayed % this.currentGame.numberOfPlayers === 0
-        ? this.endRound()
-        : this.currentGame.roundsPlayed;
+      turnsPlayed % game.numberOfPlayers === 0 ? this.endRound(game) : game.roundsPlayed;
 
-    this.setGame({ ...this.currentGame, playerInTurn, turnsPlayed, roundsPlayed });
+    this.setGame(room, { ...game, playerInTurn, turnsPlayed, roundsPlayed });
   }
 
-  static endRound() {
-    const roundsPlayed = this.currentGame.roundsPlayed + 1;
+  static endRound(game: Game) {
+    const roundsPlayed = game.roundsPlayed + 1;
 
-    const roundsForNextElections = this.currentGame.roundsForNextElections - 1;
+    const roundsForNextElections = game.roundsForNextElections - 1;
 
-    this.currentGame.roundsForNextElections =
-      roundsForNextElections <= 0 ? 4 : roundsForNextElections;
+    game.roundsForNextElections = roundsForNextElections <= 0 ? 4 : roundsForNextElections;
 
     return roundsPlayed;
   }

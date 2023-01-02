@@ -4,7 +4,6 @@ import {
   CoupAction,
   MKUltraAction
 } from 'src/constants/card-action.constant';
-import { socket } from '../socket';
 import { GameService, CardActionService } from '../services';
 
 const router = express.Router();
@@ -32,7 +31,6 @@ router.post('/api/card-action/Coup', async (req, res) => {
   };
 
   CardActionService.coup(cardAction);
-  socket.io.emit('gameStatus', GameService.currentGame);
 
   res.status(200).send({});
 });

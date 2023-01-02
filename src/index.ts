@@ -1,11 +1,8 @@
-import app from './app';
-import { createServer } from 'http';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
+import * as wss from './wss';
 import mongoose from 'mongoose';
-import { environment } from './configs';
 import { MongoUri } from './database/config';
-import { socket } from './socket';
 
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
@@ -19,19 +16,7 @@ const start = async () => {
     console.log(error);
   }
 
-  const httpServer = createServer(app);
-
-  socket.connect(httpServer);
-
-  socket.io.on('connection', () => {
-    console.log('New connection');
-  });
-
-  httpServer.listen(environment.port, () => {
-    console.log('Application listening on port ' + environment.port);
-  });
-
-  // app.listen(environment.port);
+  wss.start();
 };
 
 start();

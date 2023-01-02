@@ -1,8 +1,12 @@
 import { ApprovedLaw } from './approved-law.model';
 import { Card } from './card.model';
 
+const gameStatuses = ['INROOM', 'WAITING', 'VOTING', 'PLAYING'] as const;
+
+export type GameStatus = typeof gameStatuses[number];
+
 export class Game {
-  id: string;
+  id?: string;
   numberOfPlayers: number;
   playersIds: string[];
   playerInTurn: string;
@@ -31,7 +35,7 @@ export class Game {
     approvedLaws,
     blockedPlayers
   }: {
-    id: string;
+    id?: string;
     numberOfPlayers: number;
     playersIds: string[];
     playerInTurn: string;

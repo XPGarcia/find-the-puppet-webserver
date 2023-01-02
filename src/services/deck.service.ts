@@ -1,4 +1,4 @@
-import { Card } from '../models';
+import { Card, Game } from '../models';
 import { CardRepository } from '../repositories';
 import { GameService } from './game.service';
 
@@ -8,18 +8,18 @@ export class DeckService {
     return cards.map((cardDoc) => new Card(cardDoc));
   }
 
-  static draw({ quantity = 1 }: { quantity?: number }) {
-    const cards = GameService.currentGame.deck;
+  static draw({ game, quantity = 1 }: { game: Game; quantity?: number }) {
+    const cards = game.deck;
     const cardsInDeck = cards.filter((card) => card.inDeck);
 
     const cardsDrawn = cardsInDeck.slice(0, quantity);
-    GameService.updateDeckAfterDraw(cardsDrawn);
+    GameService.updateDeckAfterDraw(game, cardsDrawn);
 
     return cardsDrawn;
   }
 
-  static drawByIds(cardsIds: string[]) {
-    const cards = GameService.currentGame.deck;
+  static drawByIds(game: Game, cardsIds: string[]) {
+    const cards = game.deck;
     const selectedCards: Card[] = [];
 
     cardsIds.forEach((cardId) => {
@@ -28,12 +28,12 @@ export class DeckService {
       });
     });
 
-    GameService.updateDeckAfterDraw(selectedCards);
+    GameService.updateDeckAfterDraw(game, selectedCards);
 
     return selectedCards;
   }
 
-  static look() {
-    return GameService.currentGame.deck.filter((card) => card.inDeck);
+  static look(game: Game) {
+    return game.deck.filter((card) => card.inDeck);
   }
 }
