@@ -1,16 +1,14 @@
 import { GameStatus } from '../models';
 
-export interface WssResponse {
-  responseType: 'room' | 'game' | 'card';
-  roomId: string;
-  hostName?: string;
-  playerId: string;
-  clients: { playerId: string; playerName: string }[];
-  status?: GameStatus;
+export interface WssPartialResponse {
+  responseType: 'room' | 'game' | 'card' | 'deck' | 'voting';
   message: string;
+  communicationType: 'broadcast' | 'private';
+  status?: GameStatus;
 }
 
-export interface WssPartialResponse {
-  responseType: 'room' | 'game' | 'card';
-  message: string;
+export interface WssResponse extends WssPartialResponse {
+  roomId: string;
+  hostName?: string;
+  clients: { playerId: string; playerName: string; playerProfile: string }[];
 }

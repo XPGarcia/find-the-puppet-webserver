@@ -11,7 +11,10 @@ export class GameMapper {
       turnsPlayed: game.turnsPlayed,
       roundsPlayed: game.roundsPlayed,
       roundsForNextElections: game.roundsForNextElections,
-      approvedLaws: game.approvedLaws
+      approvedLaws: game.approvedLaws,
+      governmentPlayers: game.governmentPlayers,
+      oppositionPlayers: game.oppositionPlayers,
+      cardOnBoard: game.cardOnBoard
     };
   }
 }

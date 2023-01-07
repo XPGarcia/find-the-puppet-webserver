@@ -1,6 +1,6 @@
 import { environment } from './configs';
 import WebSocket, { WebSocketServer } from 'ws';
-import { ClientMessage, WssResponse } from './dtos';
+import { ClientMessage } from './dtos';
 import { EventListener } from './event-listener';
 import { Room } from './models/room.model';
 
@@ -18,61 +18,26 @@ export const start = () => {
   };
 
   wss.on('connection', (ws: WebSocket) => {
-    ws.on('message', async (data: string) => {
+    ws.on('message', (data: string) => {
       try {
         const clientMessage = JSON.parse(data) as ClientMessage;
-        if (clientMessage.eventType === 'room') {
-          if (clientMessage.action === 'create') {
-            const room = new Room({
-              id: (rooms.length + 1).toString(),
-              hostName: clientMessage.payload.playerName
-            });
-            rooms.push(room);
-            const playerId = room.newClientJoined(clientMessage.payload.playerName);
-            const serverResponse: WssResponse = {
-              responseType: 'room',
-              roomId: room.id,
-              hostName: clientMessage.payload.playerName,
-              playerId: playerId,
-              clients: room.clients,
-              message: '{}',
-              status: 'INROOM'
-            };
-            wss.broadcast(JSON.stringify(serverResponse));
-          } else if (clientMessage.action === 'join') {
-            const room = rooms.find((room) => room.id === clientMessage.payload.roomId);
-            const serverResponse: WssResponse = {
-              responseType: 'room',
-              roomId: room.id,
-              hostName: room.hostName,
-              playerId: room.newClientJoined(clientMessage.payload.playerName),
-              clients: room.clients,
-              message: '{}',
-              status: 'INROOM'
-            };
-            wss.broadcast(JSON.stringify(serverResponse));
-          }
-        }
+        console.log(clientMessage);
+        if (!clientMessage.eventType) return;
 
-        const { responseType, message } = await EventListener.execute(
-          clientMessage,
-          clientMessage.roomId
-        );
-        const serverResponse: WssResponse = {
-          roomId: clientMessage.roomId,
-          playerId: clientMessage.playerId,
-          clients: rooms.find((room) => room.id === clientMessage.roomId).clients,
-          responseType,
-          message
-        };
-        ws.send(JSON.stringify(serverResponse));
+        const wssResponse = EventListener.execute(clientMessage);
+        console.log(wssResponse);
+
+        if (wssResponse.communicationType === 'private') {
+          ws.send(JSON.stringify(wssResponse));
+        } else {
+          wss.broadcast(JSON.stringify(wssResponse));
+        }
       } catch (err) {
         console.log(err);
       }
     });
 
     ws.on('close', () => {
-      // clients = clients.filter((clientId) => clientId !== id);
       console.log(`Client has disconnected`);
     });
 
@@ -80,6 +45,8 @@ export const start = () => {
       console.log('Some Error occurred');
     };
 
+    const playerId = wss.clients.size.toString();
+    ws.send(JSON.stringify({ responseType: 'connection', playerId }));
     console.log(`Client connected`);
   });
 

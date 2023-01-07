@@ -9,11 +9,11 @@ const gameEventActions = ['start', 'endTurn'] as const;
 export type GameEventAction = typeof gameEventActions[number];
 
 export class GameEvents {
-  private static async start(room: Room): Promise<WssPartialResponse> {
+  private static start(room: Room): WssPartialResponse {
     const playersIds = room.clients.map((client) => client.playerId);
 
     const { deck, playerInTurn, playerAsPresident, governmentPlayers, oppositionPlayers } =
-      await GameService.setup(playersIds);
+      GameService.setup(playersIds);
 
     const game: Game = {
       numberOfPlayers: playersIds.length,
@@ -29,10 +29,13 @@ export class GameEvents {
       approvedLaws: []
     };
     GameService.setGame(room, game);
-    console.log(room.game);
     const gameResponse = GameMapper.toResponse(room.game);
 
-    return { responseType: 'game', message: JSON.stringify(gameResponse) };
+    return {
+      responseType: 'game',
+      message: JSON.stringify(gameResponse),
+      communicationType: 'broadcast'
+    };
   }
 
   private static endTurn(room: Room): WssPartialResponse {
@@ -40,13 +43,17 @@ export class GameEvents {
 
     const gameResponse = GameMapper.toResponse(room.game);
 
-    return { responseType: 'game', message: JSON.stringify(gameResponse) };
+    return {
+      responseType: 'game',
+      message: JSON.stringify(gameResponse),
+      communicationType: 'broadcast'
+    };
   }
 
-  static async getResponse(eventName: GameEventAction, room: Room): Promise<WssPartialResponse> {
+  static getResponse(room: Room, eventName: GameEventAction): WssPartialResponse {
     switch (eventName) {
       case 'start':
-        return await this.start(room);
+        return this.start(room);
       case 'endTurn':
         return this.endTurn(room);
     }

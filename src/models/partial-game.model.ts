@@ -15,6 +15,7 @@ export class PartialGame {
   deck?: Card[];
   approvedLaws?: ApprovedLaw[];
   blockedPlayers?: string[];
+  cardOnBoard?: Card;
 
   constructor({
     id,
@@ -29,7 +30,8 @@ export class PartialGame {
     oppositionPlayers,
     deck,
     approvedLaws,
-    blockedPlayers
+    blockedPlayers,
+    cardOnBoard
   }: {
     id?: string;
     numberOfPlayers?: number;
@@ -44,6 +46,7 @@ export class PartialGame {
     deck?: Card[];
     approvedLaws?: ApprovedLaw[];
     blockedPlayers?: string[];
+    cardOnBoard?: Card;
   }) {
     this.id = id;
     this.numberOfPlayers = numberOfPlayers;
@@ -58,5 +61,6 @@ export class PartialGame {
     this.deck = deck;
     this.approvedLaws = approvedLaws;
     this.blockedPlayers = blockedPlayers;
+    this.cardOnBoard = cardOnBoard;
   }
 }

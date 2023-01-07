@@ -9,8 +9,8 @@ export class GameService {
     room.setGame(newGame);
   }
 
-  static async setup(playersIds: string[]) {
-    const deck = await DeckService.new();
+  static setup(playersIds: string[]) {
+    const deck = DeckService.new();
 
     const gpOne = random<string>(playersIds);
     const gpTwo = random<string>(playersIds.filter((id) => id !== gpOne));

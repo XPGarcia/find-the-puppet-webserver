@@ -1,4 +1,4 @@
-import { ApprovedLaw } from 'src/models';
+import { ApprovedLaw, Card } from 'src/models';
 
 export interface GameResponse {
   id: string;
@@ -9,4 +9,7 @@ export interface GameResponse {
   roundsPlayed: number;
   roundsForNextElections: number;
   approvedLaws: ApprovedLaw[];
+  governmentPlayers: string[];
+  oppositionPlayers: string[];
+  cardOnBoard?: Card;
 }

@@ -1,10 +1,10 @@
 import { Card, Game } from '../models';
-import { CardRepository } from '../repositories';
 import { GameService } from './game.service';
+import * as fs from 'fs';
 
 export class DeckService {
-  static async new(): Promise<Card[]> {
-    const cards = await CardRepository.find();
+  static new(): Card[] {
+    const cards = JSON.parse(fs.readFileSync('assets/data/cards.json', 'utf8'));
     return cards.map((cardDoc) => new Card(cardDoc));
   }
 

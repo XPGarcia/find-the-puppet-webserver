@@ -1,14 +1,22 @@
+import { Card } from './card.model';
+
+export type Vote = 'YES' | 'NO';
+
 const VotingTypes = {
   approveLaw: 'approveLaw',
   presidentElection: 'presidentElection',
   eliminatePlayer: 'eliminatePlayer'
 } as const;
 
+type StartVoting = {
+  type: 'startVoting';
+};
+
 type ApproveLawOptions = {
   type: 'approveLaw';
   params: {
     playerId: string;
-    cardId: string;
+    card: Card;
   };
 };
 
@@ -19,6 +27,6 @@ type PresidentElectionOptions = {
   };
 };
 
-export type VotingOptions = ApproveLawOptions | PresidentElectionOptions;
+export type VotingOptions = StartVoting | ApproveLawOptions | PresidentElectionOptions;
 
 export type VotingType = typeof VotingTypes[keyof typeof VotingTypes];
