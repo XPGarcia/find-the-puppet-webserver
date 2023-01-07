@@ -16,7 +16,7 @@ type ApproveLawOptions = {
   type: 'approveLaw';
   params: {
     playerId: string;
-    card: Card;
+    cardId: string;
   };
 };
 

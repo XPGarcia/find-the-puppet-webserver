@@ -5,8 +5,11 @@ import { VotingService } from '../services';
 
 export type VotingEventAction = 'startLawVoting' | 'collectVoteForLawVoting';
 
+let playerStartedVoting = '';
+
 export class VotingEventManager {
-  private static startLawVoting(card: Card): WssPartialResponse {
+  private static startLawVoting(playerId: string, card: Card): WssPartialResponse {
+    playerStartedVoting = playerId;
     return {
       responseType: 'voting',
       message: JSON.stringify({ card }),
@@ -19,7 +22,7 @@ export class VotingEventManager {
     room: Room,
     playerId: string,
     vote: Vote,
-    card: Card
+    cardId: string
   ): WssPartialResponse {
     room.collectVote(playerId, vote);
     const response: WssPartialResponse = {
@@ -30,7 +33,7 @@ export class VotingEventManager {
     };
     if (room.votes.length === room.clients.length) {
       const canApprove = room.countVotes();
-      if (canApprove) VotingService.approveLaw(room, playerId, card);
+      if (canApprove) VotingService.approveLaw(room, playerStartedVoting, cardId);
       response.message = JSON.stringify({ game: GameMapper.toResponse(room.game) });
       response.communicationType = 'broadcast';
       delete response.status;
@@ -41,7 +44,7 @@ export class VotingEventManager {
   static getResponse(room: Room, eventName: VotingEventAction, payload?: any): WssPartialResponse {
     switch (eventName) {
       case 'startLawVoting':
-        return this.startLawVoting(payload.card);
+        return this.startLawVoting(payload.playerId, payload.card);
       case 'collectVoteForLawVoting':
         return this.collectVoteForLawVoting(room, payload.playerId, payload.vote, payload.card);
     }

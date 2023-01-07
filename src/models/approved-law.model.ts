@@ -1,11 +1,9 @@
-import { Card } from './card.model';
-
 export class ApprovedLaw {
-  card: Card;
   playerId: string;
+  cardId: string;
 
-  constructor({ card, playerId }: { card: Card; playerId: string }) {
-    this.card = card;
+  constructor({ playerId, cardId }: { playerId: string; cardId: string }) {
     this.playerId = playerId;
+    this.cardId = cardId;
   }
 }

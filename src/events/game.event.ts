@@ -39,6 +39,9 @@ export class GameEvents {
   }
 
   private static endTurn(room: Room): WssPartialResponse {
+    const gameStatus = GameService.checkWinCondition(room.game);
+    console.log(gameStatus);
+
     GameService.endTurn(room);
 
     const gameResponse = GameMapper.toResponse(room.game);
@@ -46,7 +49,8 @@ export class GameEvents {
     return {
       responseType: 'game',
       message: JSON.stringify(gameResponse),
-      communicationType: 'broadcast'
+      communicationType: 'broadcast',
+      status: gameStatus
     };
   }
 

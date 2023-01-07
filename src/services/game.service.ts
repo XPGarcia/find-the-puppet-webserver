@@ -68,4 +68,33 @@ export class GameService {
 
     return roundsPlayed;
   }
+
+  static checkWinCondition(game: Game): 'DEMOCRATS_WON' | 'FASCISTS_WON' | undefined {
+    let approvedLawsByDemocrats = 0;
+    let approvedLawsByFascists = 0;
+    game.approvedLaws.forEach((approvedLaw) => {
+      if (game.governmentPlayers.find((playerId) => playerId === approvedLaw.playerId))
+        approvedLawsByFascists++;
+      else approvedLawsByDemocrats++;
+    });
+    if (this.democratsWonByApprovedLaws(approvedLawsByDemocrats)) return 'DEMOCRATS_WON';
+    else if (this.fascistsWonByApprovedLaws(approvedLawsByFascists, game)) return 'FASCISTS_WON';
+  }
+
+  private static democratsWonByApprovedLaws(approvedLaws: number) {
+    const democratLawsToWin = 3;
+    return approvedLaws >= democratLawsToWin;
+  }
+
+  private static fascistsWonByApprovedLaws(approvedLaws: number, game: Game) {
+    const fascistLawsToWin = 2;
+    const fascistLawsToWinWithPresident = 1;
+    const isFascistPresident = game.governmentPlayers.find(
+      (playerId) => playerId === game.playerAsPresident
+    );
+    return (
+      approvedLaws >= fascistLawsToWin ||
+      (approvedLaws >= fascistLawsToWinWithPresident && isFascistPresident)
+    );
+  }
 }

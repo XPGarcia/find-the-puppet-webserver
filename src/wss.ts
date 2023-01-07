@@ -11,9 +11,9 @@ export const start = () => {
     port: environment.port
   }) as WebSocketServer;
 
-  wss.broadcast = function broadcast(data: string) {
+  wss.broadcast = function broadcast(data: string, roomId: string) {
     wss.clients.forEach(function each(client: WebSocket) {
-      client.send(data);
+      if (client.roomId === roomId) client.send(data);
     });
   };
 
@@ -25,12 +25,13 @@ export const start = () => {
         if (!clientMessage.eventType) return;
 
         const wssResponse = EventListener.execute(clientMessage);
+        ws.roomId = wssResponse.roomId;
         console.log(wssResponse);
 
         if (wssResponse.communicationType === 'private') {
           ws.send(JSON.stringify(wssResponse));
         } else {
-          wss.broadcast(JSON.stringify(wssResponse));
+          wss.broadcast(JSON.stringify(wssResponse), wssResponse.roomId);
         }
       } catch (err) {
         console.log(err);

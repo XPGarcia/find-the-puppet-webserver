@@ -1,7 +1,14 @@
 import { ApprovedLaw } from './approved-law.model';
 import { Card } from './card.model';
 
-const gameStatuses = ['INROOM', 'WAITING', 'VOTING', 'PLAYING'] as const;
+const gameStatuses = [
+  'INROOM',
+  'WAITING',
+  'VOTING',
+  'PLAYING',
+  'DEMOCRATS_WON',
+  'FASCISTS_WON'
+] as const;
 
 export type GameStatus = typeof gameStatuses[number];
 

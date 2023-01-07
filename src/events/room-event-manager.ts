@@ -21,7 +21,7 @@ export class RoomEventManager {
       clients: room.clients,
       message: '{}',
       status: 'INROOM',
-      communicationType: 'broadcast'
+      communicationType: 'private'
     };
   }
 
