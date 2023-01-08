@@ -50,6 +50,12 @@ export class Room {
     return playerId;
   }
 
+  removeClient(playerId: string) {
+    const client = this.clients.find((client) => client.playerId === playerId);
+    this.profiles.push(client.playerProfile);
+    this.clients = this.clients.filter((c) => c.playerId !== client.playerId);
+  }
+
   setClientProfile(playerId: string, playerProfile: string) {
     this.clients.forEach((client) => {
       if (client.playerId === playerId) client.playerProfile = playerProfile;

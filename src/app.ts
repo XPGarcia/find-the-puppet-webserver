@@ -13,6 +13,4 @@ app.get('/health/ready', (req, res) => {
   res.send('OK!');
 });
 
-app.listen(3000);
-
 export default app;

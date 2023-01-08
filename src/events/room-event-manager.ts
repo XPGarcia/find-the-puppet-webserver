@@ -2,7 +2,7 @@ import { WssResponse } from '../dtos';
 import { Room } from '../models';
 import { rooms } from '../wss';
 
-const roomEventActions = ['create', 'join', 'updateProfile'] as const;
+const roomEventActions = ['create', 'join', 'leave', 'updateProfile'] as const;
 
 export type RoomEventAction = typeof roomEventActions[number];
 
@@ -39,6 +39,19 @@ export class RoomEventManager {
     };
   }
 
+  static leaveRoom(roomId: string, playerId: string): WssResponse {
+    const room = rooms.find((room) => room.id === roomId);
+    room.removeClient(playerId);
+    return {
+      responseType: 'room',
+      roomId: room.id,
+      hostName: room.hostName,
+      clients: room.clients,
+      message: '{}',
+      communicationType: 'broadcast'
+    };
+  }
+
   static updateProfile(roomId: string, playerId: string): WssResponse {
     const room = rooms.find((room) => room.id === roomId);
     const profile = room.getNewRandomProfile();
@@ -60,6 +73,8 @@ export class RoomEventManager {
         return this.createRoom(payload.playerName);
       case 'join':
         return this.joinRoom(payload.roomId, payload.playerName);
+      case 'leave':
+        return this.leaveRoom(payload.roomId, payload.playerId);
       case 'updateProfile':
         return this.updateProfile(payload.roomId, payload.playerId);
     }
