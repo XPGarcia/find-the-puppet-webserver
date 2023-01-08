@@ -1,5 +1,6 @@
 import { environment } from './configs';
 import WebSocket, { WebSocketServer } from 'ws';
+import app from './app';
 import { createServer } from 'https';
 import { ClientMessage } from './dtos';
 import { EventListener } from './event-listener';
@@ -9,10 +10,12 @@ import * as fs from 'fs';
 export const rooms: Room[] = [];
 
 export const start = () => {
-  const server = createServer({
+  const serverOptions = {
     cert: fs.readFileSync('src/certificate.crt'),
     key: fs.readFileSync('src/private.key')
-  });
+  };
+
+  const server = createServer(serverOptions, app);
 
   const wss = new WebSocketServer({
     server
@@ -58,7 +61,7 @@ export const start = () => {
     console.log(`Client connected`);
   });
 
-  server.listen(environment.port, () => {
-    console.log(`The WebSocket server is running on port ${environment.port}`);
+  server.listen(8443, () => {
+    console.log('The WebSocket server is running on port 8443');
   });
 };
