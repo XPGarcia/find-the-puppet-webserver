@@ -1,5 +1,6 @@
 import { environment } from './configs';
 import WebSocket, { WebSocketServer } from 'ws';
+import { createServer } from 'https';
 import { ClientMessage } from './dtos';
 import { EventListener } from './event-listener';
 import { Room } from './models/room.model';
@@ -8,9 +9,13 @@ import * as fs from 'fs';
 export const rooms: Room[] = [];
 
 export const start = () => {
+  const server = createServer({
+    cert: fs.readFileSync('/var/cpanel/ssl/apache_tls/example.com/combined'),
+    key: fs.readFileSync('/var/cpanel/ssl/apache_tls/example.com/combined')
+  });
+
   const wss = new WebSocketServer({
-    cert: fs.readFileSync('src/certificate.crt'),
-    key: fs.readFileSync('src/private.key'),
+    server,
     port: environment.port
   }) as WebSocketServer;
 
