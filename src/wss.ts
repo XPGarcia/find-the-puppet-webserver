@@ -10,13 +10,12 @@ export const rooms: Room[] = [];
 
 export const start = () => {
   const server = createServer({
-    cert: fs.readFileSync('/var/cpanel/ssl/apache_tls/example.com/combined'),
-    key: fs.readFileSync('/var/cpanel/ssl/apache_tls/example.com/combined')
+    cert: fs.readFileSync('src/certificate.crt'),
+    key: fs.readFileSync('src/private.key')
   });
 
   const wss = new WebSocketServer({
-    server,
-    port: environment.port
+    server
   }) as WebSocketServer;
 
   wss.broadcast = function broadcast(data: string, roomId: string) {
@@ -59,5 +58,7 @@ export const start = () => {
     console.log(`Client connected`);
   });
 
-  console.log(`The WebSocket server is running on port ${environment.port}`);
+  server.listen(environment.port, () => {
+    console.log(`The WebSocket server is running on port ${environment.port}`);
+  });
 };
