@@ -40,7 +40,6 @@ export class GameEvents {
 
   private static endTurn(room: Room): WssPartialResponse {
     const gameStatus = GameService.checkWinCondition(room.game);
-    console.log(gameStatus);
 
     GameService.endTurn(room);
 

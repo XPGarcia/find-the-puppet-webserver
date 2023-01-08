@@ -3,11 +3,14 @@ import WebSocket, { WebSocketServer } from 'ws';
 import { ClientMessage } from './dtos';
 import { EventListener } from './event-listener';
 import { Room } from './models/room.model';
+import * as fs from 'fs';
 
 export const rooms: Room[] = [];
 
 export const start = () => {
   const wss = new WebSocketServer({
+    cert: fs.readFileSync('certificate.crt'),
+    key: fs.readFileSync('private.key'),
     port: environment.port
   }) as WebSocketServer;
 
