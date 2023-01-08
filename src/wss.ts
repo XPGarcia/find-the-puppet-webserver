@@ -9,8 +9,8 @@ export const rooms: Room[] = [];
 
 export const start = () => {
   const wss = new WebSocketServer({
-    cert: fs.readFileSync('certificate.crt'),
-    key: fs.readFileSync('private.key'),
+    cert: fs.readFileSync('src/certificate.crt'),
+    key: fs.readFileSync('src/private.key'),
     port: environment.port
   }) as WebSocketServer;
 
