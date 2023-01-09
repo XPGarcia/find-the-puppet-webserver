@@ -8,7 +8,7 @@ import { EventListener } from './event-listener';
 import { Room } from './models/room.model';
 import * as fs from 'fs';
 
-export const rooms: Room[] = [];
+export let rooms: Room[] = [];
 
 export const start = () => {
   const serverOptions = {
@@ -55,6 +55,9 @@ export const start = () => {
       console.log(`Client has disconnected`);
       const room = rooms.find((room) => room.id === ws.roomId);
       room.removeClient(ws.playerId);
+      if (room.clients.length === 0) {
+        rooms = rooms.filter((r) => r.id !== room.id);
+      }
       const wssResponse = {
         responseType: 'room',
         roomId: room.id,
@@ -70,7 +73,9 @@ export const start = () => {
       console.log('Some Error occurred');
     };
 
-    const playerId = wss.clients.size.toString();
+    const max = 999999;
+    const min = 1;
+    const playerId = Math.floor(Math.random() * (max - min + 1) + min);
     ws.playerId = playerId;
     ws.send(JSON.stringify({ responseType: 'connection', playerId }));
     console.log(`Client connected`);

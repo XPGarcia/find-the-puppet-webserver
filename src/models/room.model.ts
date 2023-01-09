@@ -5,7 +5,6 @@ import { Vote } from './voting.model';
 export class Room {
   id: string;
   hostName: string;
-  nextClientId: number;
   clients: { playerId: string; playerName: string; playerProfile: string }[];
   game: Game;
   profiles = [
@@ -20,7 +19,6 @@ export class Room {
   constructor({ id, hostName }: { id: string; hostName: string }) {
     this.id = id;
     this.hostName = hostName;
-    this.nextClientId = 1;
     this.clients = [];
     this.game = {
       numberOfPlayers: 0,
@@ -38,22 +36,24 @@ export class Room {
     this.votes = [];
   }
 
-  newClientJoined(playerName: string) {
-    const playerId = this.nextClientId.toString();
+  newClientJoined(playerId: string, playerName: string) {
     const client = {
       playerId,
       playerName,
       playerProfile: ''
     };
     this.clients.push(client);
-    this.nextClientId++;
     return playerId;
   }
 
   removeClient(playerId: string) {
     const client = this.clients.find((client) => client.playerId === playerId);
-    this.profiles.push(client.playerProfile);
+    if (!client) return;
+
+    if (client.playerProfile) this.profiles.push(client.playerProfile);
     this.clients = this.clients.filter((c) => c.playerId !== client.playerId);
+    if (client.playerName === this.hostName && this.clients.length > 0)
+      this.hostName = this.clients[0].playerName;
   }
 
   setClientProfile(playerId: string, playerProfile: string) {
