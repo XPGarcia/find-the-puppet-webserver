@@ -1,10 +1,14 @@
 import { ApprovedLaw } from './approved-law.model';
 import { Card } from './card.model';
+import { Player } from './player.model';
 
 const gameStatuses = [
   'INROOM',
   'WAITING',
-  'VOTING',
+  'WAITING_VOTING',
+  'LAW_VOTING',
+  'ELIMINATE_VOTING',
+  'PRESIDENT_VOTING',
   'PLAYING',
   'DEMOCRATS_WON',
   'FASCISTS_WON'
@@ -15,7 +19,7 @@ export type GameStatus = typeof gameStatuses[number];
 export class Game {
   id?: string;
   numberOfPlayers: number;
-  playersIds: string[];
+  players: Player[];
   playerInTurn: string;
   playerAsPresident: string;
   turnsPlayed: number;
@@ -31,7 +35,7 @@ export class Game {
   constructor({
     id,
     numberOfPlayers,
-    playersIds,
+    players,
     playerInTurn,
     playerAsPresident,
     turnsPlayed,
@@ -46,7 +50,7 @@ export class Game {
   }: {
     id?: string;
     numberOfPlayers: number;
-    playersIds: string[];
+    players: Player[];
     playerInTurn: string;
     playerAsPresident: string;
     turnsPlayed: number;
@@ -61,7 +65,7 @@ export class Game {
   }) {
     this.id = id;
     this.numberOfPlayers = numberOfPlayers;
-    this.playersIds = playersIds;
+    this.players = players;
     this.playerInTurn = playerInTurn;
     this.playerAsPresident = playerAsPresident;
     this.turnsPlayed = turnsPlayed;
@@ -73,5 +77,18 @@ export class Game {
     this.approvedLaws = approvedLaws;
     this.blockedPlayers = blockedPlayers;
     this.cardOnBoard = cardOnBoard;
+  }
+
+  eliminatePlayer(eliminatedPlayerId: string) {
+    const index = this.players.findIndex((player) => player.playerId === eliminatedPlayerId);
+    this.players = this.players.filter(
+      (player) => player.playerId.toString() !== eliminatedPlayerId
+    );
+    if (eliminatedPlayerId === this.playerAsPresident) this.playerAsPresident = '';
+    if (eliminatedPlayerId === this.playerInTurn) {
+      const nextIndex = index >= this.players.length ? 0 : index;
+      this.playerInTurn = this.players[nextIndex].playerId;
+    }
+    this.numberOfPlayers = this.players.length;
   }
 }

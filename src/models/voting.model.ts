@@ -2,6 +2,10 @@ import { Card } from './card.model';
 
 export type Vote = 'YES' | 'NO';
 
+export interface EliminateVote {
+  selectedPlayerId: string;
+}
+
 const VotingTypes = {
   approveLaw: 'approveLaw',
   presidentElection: 'presidentElection',

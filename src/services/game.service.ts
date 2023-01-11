@@ -5,7 +5,7 @@ import { Room } from 'src/models/room.model';
 
 export class GameService {
   static setGame(room: Room, partialGame: PartialGame) {
-    const newGame = { ...room.game, ...partialGame };
+    const newGame = new Game({ ...room.game, ...partialGame });
     room.setGame(newGame);
   }
 
@@ -46,30 +46,29 @@ export class GameService {
 
   static endTurn(room: Room) {
     const game = room.game;
-    const playersIds = game.playersIds;
+    const playersIds = game.players.map((player) => player.playerId);
     const playerIndex = playersIds.findIndex((id) => id === game.playerInTurn);
 
     const nextPlayerIndex = playerIndex + 1 === playersIds.length ? 0 : playerIndex + 1;
     const playerInTurn = playersIds[nextPlayerIndex];
 
-    const turnsPlayed = game.turnsPlayed + 1;
     const roundsPlayed =
-      turnsPlayed % game.numberOfPlayers === 0 ? this.endRound(game) : game.roundsPlayed;
+      ++game.turnsPlayed % game.numberOfPlayers === 0 ? this.endRound(game) : game.roundsPlayed;
 
-    this.setGame(room, { ...game, playerInTurn, turnsPlayed, roundsPlayed });
+    this.setGame(room, { ...game, playerInTurn, roundsPlayed });
   }
 
   static endRound(game: Game) {
     const roundsPlayed = game.roundsPlayed + 1;
-
     const roundsForNextElections = game.roundsForNextElections - 1;
 
     game.roundsForNextElections = roundsForNextElections <= 0 ? 4 : roundsForNextElections;
+    game.turnsPlayed = 0;
 
     return roundsPlayed;
   }
 
-  static checkWinCondition(game: Game): 'DEMOCRATS_WON' | 'FASCISTS_WON' | undefined {
+  static checkWinConditionByLaws(game: Game): 'DEMOCRATS_WON' | 'FASCISTS_WON' | undefined {
     let approvedLawsByDemocrats = 0;
     let approvedLawsByFascists = 0;
     game.approvedLaws.forEach((approvedLaw) => {
@@ -82,7 +81,7 @@ export class GameService {
   }
 
   private static democratsWonByApprovedLaws(approvedLaws: number) {
-    const democratLawsToWin = 4;
+    const democratLawsToWin = 5;
     return approvedLaws >= democratLawsToWin;
   }
 
@@ -96,5 +95,16 @@ export class GameService {
       approvedLaws >= fascistLawsToWin ||
       (approvedLaws >= fascistLawsToWinWithPresident && isFascistPresident)
     );
+  }
+
+  static checkWinConditionByPlayers(game: Game): 'DEMOCRATS_WON' | 'FASCISTS_WON' | undefined {
+    let democratPlayers = 0;
+    let fascistPlayers = 0;
+    game.players.forEach((player) => {
+      if (game.governmentPlayers.find((playerId) => playerId === player.playerId)) fascistPlayers++;
+      else democratPlayers++;
+    });
+    if (fascistPlayers === 0) return 'DEMOCRATS_WON';
+    else if (democratPlayers === 0) return 'FASCISTS_WON';
   }
 }

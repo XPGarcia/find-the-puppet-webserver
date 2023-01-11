@@ -10,14 +10,14 @@ export type GameEventAction = typeof gameEventActions[number];
 
 export class GameEvents {
   private static start(room: Room): WssPartialResponse {
-    const playersIds = room.clients.map((client) => client.playerId);
+    const players = [...room.clients];
 
     const { deck, playerInTurn, playerAsPresident, governmentPlayers, oppositionPlayers } =
-      GameService.setup(playersIds);
+      GameService.setup(players.map((player) => player.playerId));
 
-    const game: Game = {
-      numberOfPlayers: playersIds.length,
-      playersIds,
+    const game = new Game({
+      numberOfPlayers: players.length,
+      players,
       playerInTurn,
       playerAsPresident,
       turnsPlayed: 0,
@@ -27,7 +27,7 @@ export class GameEvents {
       oppositionPlayers,
       deck,
       approvedLaws: []
-    };
+    });
     GameService.setGame(room, game);
     const gameResponse = GameMapper.toResponse(room.game);
 
@@ -39,7 +39,7 @@ export class GameEvents {
   }
 
   private static endTurn(room: Room): WssPartialResponse {
-    const gameStatus = GameService.checkWinCondition(room.game);
+    const gameStatus = GameService.checkWinConditionByLaws(room.game);
 
     GameService.endTurn(room);
 

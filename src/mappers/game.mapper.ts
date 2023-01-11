@@ -5,6 +5,7 @@ export class GameMapper {
   static toResponse(game: Game): GameResponse {
     return {
       id: game.id,
+      players: game.players,
       numberOfPlayers: game.numberOfPlayers,
       playerInTurn: game.playerInTurn,
       playerAsPresident: game.playerAsPresident,

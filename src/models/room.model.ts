@@ -12,17 +12,18 @@ export class Room {
     'anarchist_cat.png',
     'communist_monkey.png',
     'priest_fox.png',
-    'capitalist_pig_2.png'
+    'patrick.png'
   ];
   votes: { playerId: string; vote: Vote }[];
+  eliminateVotes: { playerId: string; selectedPlayerId: string }[];
 
   constructor({ id, hostName }: { id: string; hostName: string }) {
     this.id = id;
     this.hostName = hostName;
     this.clients = [];
-    this.game = {
+    this.game = new Game({
       numberOfPlayers: 0,
-      playersIds: [],
+      players: [],
       playerInTurn: '',
       playerAsPresident: '',
       turnsPlayed: 0,
@@ -32,8 +33,9 @@ export class Room {
       oppositionPlayers: [],
       deck: [],
       approvedLaws: []
-    };
+    });
     this.votes = [];
+    this.eliminateVotes = [];
   }
 
   newClientJoined(playerId: string, playerName: string) {
@@ -85,6 +87,29 @@ export class Room {
     });
     this.votes = [];
     return yes >= no;
+  }
+
+  collectEliminateVote(playerId: string, selectedPlayerId: string) {
+    this.eliminateVotes.push({ playerId, selectedPlayerId });
+  }
+
+  countEliminateVotes(): string | undefined {
+    const counts = {};
+    const selectedPlayers = this.eliminateVotes.map((vote) => vote.selectedPlayerId);
+    selectedPlayers.forEach(function (playerId) {
+      counts[playerId] = (counts[playerId] || 0) + 1;
+    });
+    let mostVotedPlayer: string;
+    let voteCount = 0;
+    Object.keys(counts).forEach((playerId) => {
+      if (counts[playerId] > voteCount) {
+        mostVotedPlayer = playerId;
+        voteCount = counts[playerId];
+      }
+    });
+    this.eliminateVotes = [];
+    if (mostVotedPlayer && voteCount >= Math.ceil(this.clients.length / 2)) return mostVotedPlayer;
+    return;
   }
 
   setGame(game: Game) {

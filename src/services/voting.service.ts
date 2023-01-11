@@ -3,8 +3,6 @@ import { VotingOptions } from '../models';
 import { GameService } from './game.service';
 
 export class VotingService {
-  playerId = '';
-
   static execute(room: Room, options: VotingOptions) {
     switch (options.type) {
       case 'startVoting':

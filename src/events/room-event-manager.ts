@@ -1,19 +1,21 @@
+import { getRandomId } from '../utils';
 import { WssResponse } from '../dtos';
 import { Room } from '../models';
-import { rooms } from '../wss';
 
 const roomEventActions = ['create', 'join', 'leave', 'updateProfile'] as const;
 
 export type RoomEventAction = typeof roomEventActions[number];
 
 export class RoomEventManager {
+  static rooms: Room[] = [];
+
   static createRoom(playerId: string, playerName: string): WssResponse {
     const room = new Room({
-      id: (rooms.length + 1).toString(),
+      id: getRandomId().toString(),
       hostName: playerName
     });
     room.newClientJoined(playerId, playerName);
-    rooms.push(room);
+    this.rooms.push(room);
     return {
       responseType: 'room',
       roomId: room.id,
@@ -26,7 +28,7 @@ export class RoomEventManager {
   }
 
   static joinRoom(roomId: string, playerId: string, playerName: string): WssResponse {
-    const room = rooms.find((room) => room.id === roomId);
+    const room = this.getRoom(roomId);
     room.newClientJoined(playerId, playerName);
     return {
       responseType: 'room',
@@ -40,8 +42,11 @@ export class RoomEventManager {
   }
 
   static leaveRoom(roomId: string, playerId: string): WssResponse {
-    const room = rooms.find((room) => room.id === roomId);
+    const room = this.getRoom(roomId);
     room.removeClient(playerId);
+    if (!room) return;
+
+    if (room.clients.length === 0) RoomEventManager.removeRoom(room.id);
     return {
       responseType: 'room',
       roomId: room.id,
@@ -53,7 +58,7 @@ export class RoomEventManager {
   }
 
   static updateProfile(roomId: string, playerId: string): WssResponse {
-    const room = rooms.find((room) => room.id === roomId);
+    const room = this.getRoom(roomId);
     const profile = room.getNewRandomProfile();
     room.setClientProfile(playerId, profile);
     return {
@@ -65,6 +70,14 @@ export class RoomEventManager {
       status: 'INROOM',
       communicationType: 'broadcast'
     };
+  }
+
+  static getRoom(roomId: string): Room {
+    return this.rooms.find((room) => room.id === roomId);
+  }
+
+  static removeRoom(roomId: string): void {
+    this.rooms = this.rooms.filter((room) => room.id !== roomId);
   }
 
   static getResponse(eventName: RoomEventAction, payload?: any): WssResponse {

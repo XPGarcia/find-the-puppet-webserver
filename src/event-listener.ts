@@ -10,12 +10,10 @@ import {
   VotingEventManager
 } from './events';
 import { RoomEventAction } from './events';
-import { rooms } from './wss';
+import { Room } from './models';
 
 export class EventListener {
-  static execute(message: ClientMessage): WssResponse {
-    const room = rooms.find((room) => room.id === message.roomId);
-
+  static execute(room: Room, message: ClientMessage): WssResponse {
     let wssResponse: WssResponse = room && {
       roomId: room.id,
       hostName: room.hostName,

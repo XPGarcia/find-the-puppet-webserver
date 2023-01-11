@@ -7,18 +7,18 @@ import { ClientMessage } from './dtos';
 import { EventListener } from './event-listener';
 import { Room } from './models/room.model';
 import * as fs from 'fs';
-
-export let rooms: Room[] = [];
+import { getRandomId } from './utils';
+import { RoomEventManager } from './events';
 
 export const start = () => {
-  const serverOptions = {
-    cert: fs.readFileSync('src/certificate.crt'),
-    key: fs.readFileSync('src/private.key')
-  };
+  // const serverOptions = {
+  //   cert: fs.readFileSync('src/certificate.crt'),
+  //   key: fs.readFileSync('src/private.key')
+  // };
 
-  const server = https.createServer(serverOptions, app);
+  // const server = https.createServer(serverOptions, app);
 
-  // const server = http.createServer(app);
+  const server = http.createServer(app);
 
   const wss = new WebSocketServer({
     server
@@ -34,13 +34,13 @@ export const start = () => {
     ws.on('message', (data: string) => {
       try {
         const clientMessage = JSON.parse(data) as ClientMessage;
-        console.log(clientMessage);
         if (!clientMessage.eventType) return;
 
-        const wssResponse = EventListener.execute(clientMessage);
+        const room = RoomEventManager.getRoom(clientMessage.roomId);
+        const wssResponse = EventListener.execute(room, clientMessage);
         ws.roomId = wssResponse.roomId;
-        console.log(wssResponse);
 
+        console.log(wssResponse);
         if (wssResponse.communicationType === 'private') {
           ws.send(JSON.stringify(wssResponse));
         } else {
@@ -53,11 +53,11 @@ export const start = () => {
 
     ws.on('close', () => {
       console.log(`Client has disconnected`);
-      const room = rooms.find((room) => room.id === ws.roomId);
+      const room = RoomEventManager.getRoom(ws.roomId);
+      if (!room) return;
+
       room.removeClient(ws.playerId);
-      if (room.clients.length === 0) {
-        rooms = rooms.filter((r) => r.id !== room.id);
-      }
+      if (room.clients.length === 0) RoomEventManager.removeRoom(room.id);
       const wssResponse = {
         responseType: 'room',
         roomId: room.id,
@@ -73,19 +73,17 @@ export const start = () => {
       console.log('Some Error occurred');
     };
 
-    const max = 999999;
-    const min = 1;
-    const playerId = Math.floor(Math.random() * (max - min + 1) + min);
+    const playerId = getRandomId().toString();
     ws.playerId = playerId;
     ws.send(JSON.stringify({ responseType: 'connection', playerId }));
     console.log(`Client connected`);
   });
 
-  server.listen(8443, () => {
-    console.log('The WebSocket server is running on port 8443');
-  });
-
-  // server.listen(3000, () => {
-  //   console.log('The WebSocket server is running on port 3000');
+  // server.listen(8443, () => {
+  //   console.log('The WebSocket server is running on port 8443');
   // });
+
+  server.listen(3000, () => {
+    console.log('The WebSocket server is running on port 3000');
+  });
 };

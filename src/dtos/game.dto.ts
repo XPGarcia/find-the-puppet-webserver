@@ -1,7 +1,8 @@
-import { ApprovedLaw, Card } from 'src/models';
+import { ApprovedLaw, Card, Player } from '../models';
 
 export interface GameResponse {
   id: string;
+  players: Player[];
   numberOfPlayers: number;
   playerInTurn: string;
   playerAsPresident: string;
