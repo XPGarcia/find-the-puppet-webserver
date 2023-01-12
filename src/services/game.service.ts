@@ -62,7 +62,7 @@ export class GameService {
     const roundsPlayed = game.roundsPlayed + 1;
     const roundsForNextElections = game.roundsForNextElections - 1;
 
-    game.roundsForNextElections = roundsForNextElections <= 0 ? 4 : roundsForNextElections;
+    game.roundsForNextElections = roundsForNextElections <= 0 ? 2 : roundsForNextElections;
     game.turnsPlayed = 0;
 
     return roundsPlayed;
@@ -72,7 +72,7 @@ export class GameService {
     let approvedLawsByDemocrats = 0;
     let approvedLawsByFascists = 0;
     game.approvedLaws.forEach((approvedLaw) => {
-      if (game.governmentPlayers.find((playerId) => playerId === approvedLaw.playerId))
+      if (game.governmentPlayers.find((playerId) => playerId === approvedLaw.player.playerId))
         approvedLawsByFascists++;
       else approvedLawsByDemocrats++;
     });

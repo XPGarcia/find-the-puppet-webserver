@@ -1,4 +1,5 @@
 import { Card } from './card.model';
+import { Player } from './player.model';
 
 export type Vote = 'YES' | 'NO';
 
@@ -19,7 +20,7 @@ type StartVoting = {
 type ApproveLawOptions = {
   type: 'approveLaw';
   params: {
-    playerId: string;
+    player: Player;
     cardId: string;
   };
 };

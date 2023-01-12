@@ -1,4 +1,4 @@
-import { ApprovedLaw, Room } from '../models';
+import { ApprovedLaw, Player, Room } from '../models';
 import { VotingOptions } from '../models';
 import { GameService } from './game.service';
 
@@ -8,7 +8,7 @@ export class VotingService {
       case 'startVoting':
         break;
       case 'approveLaw':
-        this.approveLaw(room, options.params.playerId, options.params.cardId);
+        this.approveLaw(room, options.params.player, options.params.cardId);
         break;
       case 'presidentElection':
         this.presidentElection(room, options.params.playerId);
@@ -16,8 +16,8 @@ export class VotingService {
     }
   }
 
-  static approveLaw(room: Room, playerId: string, cardId: string) {
-    const approvedLaw = new ApprovedLaw({ playerId, cardId });
+  static approveLaw(room: Room, player: Player, cardId: string) {
+    const approvedLaw = new ApprovedLaw({ player, cardId });
     const approvedLaws = [...room.game.approvedLaws];
     approvedLaws.push(approvedLaw);
     GameService.setGame(room, { approvedLaws });

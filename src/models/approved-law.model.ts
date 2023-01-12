@@ -1,9 +1,11 @@
+import { Player } from './player.model';
+
 export class ApprovedLaw {
-  playerId: string;
+  player: Player;
   cardId: string;
 
-  constructor({ playerId, cardId }: { playerId: string; cardId: string }) {
-    this.playerId = playerId;
+  constructor({ player, cardId }: { player: Player; cardId: string }) {
+    this.player = player;
     this.cardId = cardId;
   }
 }

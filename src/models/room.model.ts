@@ -15,7 +15,7 @@ export class Room {
     'patrick.png'
   ];
   votes: { playerId: string; vote: Vote }[];
-  eliminateVotes: { playerId: string; selectedPlayerId: string }[];
+  selectedPlayerVotes: { playerId: string; selectedPlayerId: string }[];
 
   constructor({ id, hostName }: { id: string; hostName: string }) {
     this.id = id;
@@ -35,7 +35,7 @@ export class Room {
       approvedLaws: []
     });
     this.votes = [];
-    this.eliminateVotes = [];
+    this.selectedPlayerVotes = [];
   }
 
   newClientJoined(playerId: string, playerName: string) {
@@ -89,14 +89,15 @@ export class Room {
     return yes >= no;
   }
 
-  collectEliminateVote(playerId: string, selectedPlayerId: string) {
-    this.eliminateVotes.push({ playerId, selectedPlayerId });
+  collectSelectedPlayerVote(playerId: string, selectedPlayerId: string) {
+    this.selectedPlayerVotes.push({ playerId, selectedPlayerId });
   }
 
-  countEliminateVotes(): string | undefined {
+  countSelectedPlayerVotes(): string | undefined {
     const counts = {};
-    const selectedPlayers = this.eliminateVotes.map((vote) => vote.selectedPlayerId);
+    const selectedPlayers = this.selectedPlayerVotes.map((vote) => vote.selectedPlayerId);
     selectedPlayers.forEach(function (playerId) {
+      if (!playerId) return;
       counts[playerId] = (counts[playerId] || 0) + 1;
     });
     let mostVotedPlayer: string;
@@ -107,7 +108,7 @@ export class Room {
         voteCount = counts[playerId];
       }
     });
-    this.eliminateVotes = [];
+    this.selectedPlayerVotes = [];
     if (mostVotedPlayer && voteCount >= Math.ceil(this.clients.length / 2)) return mostVotedPlayer;
     return;
   }

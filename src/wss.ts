@@ -11,14 +11,14 @@ import { getRandomId } from './utils';
 import { RoomEventManager } from './events';
 
 export const start = () => {
-  const serverOptions = {
-    cert: fs.readFileSync('src/certificate.crt'),
-    key: fs.readFileSync('src/private.key')
-  };
+  // const serverOptions = {
+  //   cert: fs.readFileSync('src/certificate.crt'),
+  //   key: fs.readFileSync('src/private.key')
+  // };
 
-  const server = https.createServer(serverOptions, app);
+  // const server = https.createServer(serverOptions, app);
 
-  // const server = http.createServer(app);
+  const server = http.createServer(app);
 
   const wss = new WebSocketServer({
     server
@@ -34,6 +34,7 @@ export const start = () => {
     ws.on('message', (data: string) => {
       try {
         const clientMessage = JSON.parse(data) as ClientMessage;
+        console.log(clientMessage);
         if (!clientMessage.eventType) return;
 
         const room = RoomEventManager.getRoom(clientMessage.roomId);
@@ -79,11 +80,11 @@ export const start = () => {
     console.log(`Client connected`);
   });
 
-  server.listen(8443, () => {
-    console.log('The WebSocket server is running on port 8443');
-  });
-
-  // server.listen(3000, () => {
-  //   console.log('The WebSocket server is running on port 3000');
+  // server.listen(8443, () => {
+  //   console.log('The WebSocket server is running on port 8443');
   // });
+
+  server.listen(3000, () => {
+    console.log('The WebSocket server is running on port 3000');
+  });
 };

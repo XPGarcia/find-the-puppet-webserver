@@ -1,6 +1,7 @@
 import { ApprovedLaw } from './approved-law.model';
 import { Card } from './card.model';
 import { Player } from './player.model';
+import { random } from '../utils';
 
 const gameStatuses = [
   'INROOM',
@@ -90,5 +91,19 @@ export class Game {
       this.playerInTurn = this.players[nextIndex].playerId;
     }
     this.numberOfPlayers = this.players.length;
+  }
+
+  changePresident(selectedPresidentId: string) {
+    if (selectedPresidentId) {
+      this.playerAsPresident = selectedPresidentId;
+      return;
+    }
+
+    let randomPresidentId = random(this.players).playerId;
+    // eslint-disable-next-line no-loops/no-loops
+    while (randomPresidentId === this.playerAsPresident)
+      randomPresidentId = random(this.players).playerId;
+
+    this.playerAsPresident = randomPresidentId;
   }
 }

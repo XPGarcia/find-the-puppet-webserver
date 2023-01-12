@@ -22,7 +22,7 @@ export class GameEvents {
       playerAsPresident,
       turnsPlayed: 0,
       roundsPlayed: 0,
-      roundsForNextElections: 4,
+      roundsForNextElections: 2,
       governmentPlayers,
       oppositionPlayers,
       deck,
