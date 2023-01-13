@@ -1,4 +1,4 @@
-const eventTypes = ['room', 'game', 'deck', 'actionCard', 'voting'] as const;
+const eventTypes = ['room', 'game', 'deck', 'actionCard', 'voting', 'card'] as const;
 
 export type EventType = typeof eventTypes[number];
 
