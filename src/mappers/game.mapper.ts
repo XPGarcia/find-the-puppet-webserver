@@ -15,6 +15,7 @@ export class GameMapper {
       approvedLaws: game.approvedLaws,
       governmentPlayers: game.governmentPlayers,
       oppositionPlayers: game.oppositionPlayers,
+      blockedPlayers: game.blockedPlayers,
       cardOnBoard: game.cardOnBoard
     };
   }

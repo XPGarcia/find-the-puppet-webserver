@@ -1,22 +1,13 @@
 export type MKUltraAction = {
-  name: 'MKUltra';
-  payload: {
-    selectedPlayerId: string;
-  };
+  selectedPlayerId: string;
 };
 
 export type CoupAction = {
-  name: 'Coup';
-  payload: {
-    playerId: string;
-  };
+  playerId: string;
 };
 
 export type CorruptionInvestigationAction = {
-  name: 'CorruptionInvestigation';
-  payload: {
-    selectedPlayerId: string;
-  };
+  selectedPlayerId: string;
 };
 
 export type CardAction = MKUltraAction | CoupAction | CorruptionInvestigationAction;

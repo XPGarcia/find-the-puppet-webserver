@@ -6,6 +6,7 @@ export class CardMapper {
     return {
       id: card.id,
       type: card.type,
+      code: card.code,
       title: card.title,
       body: card.body,
       quickPlay: card.quickPlay

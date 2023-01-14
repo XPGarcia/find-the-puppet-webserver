@@ -1,39 +1,31 @@
-// router.post('/api/card-action/MKUltra', (req, res) => {
-//   const { selectedPlayerId } = req.body;
+import { WssPartialResponse } from '../dtos';
+import { Card, Room } from '../models';
 
-//   const cardAction: MKUltraAction = {
-//     name: 'MKUltra',
-//     payload: { selectedPlayerId }
-//   };
+export type CardEventAction = 'startAction' | 'endAction';
 
-//   const selectedPlayerRol = CardActionService.mkUltra(cardAction);
-//   const response = { selectedPlayerId, selectedPlayerRol };
+export class CardEventManager {
+  private static startAction(card: Card): WssPartialResponse {
+    return {
+      responseType: 'card',
+      message: JSON.stringify({ card }),
+      communicationType: 'broadcast'
+    };
+  }
 
-//   res.status(200).send({ data: response });
-// });
+  private static endAction(card: Card): WssPartialResponse {
+    return {
+      responseType: 'card',
+      message: JSON.stringify({}),
+      communicationType: 'broadcast'
+    };
+  }
 
-// router.post('/api/card-action/Coup', (req, res) => {
-//   const { playerId } = req.body;
-
-//   const cardAction: CoupAction = {
-//     name: 'Coup',
-//     payload: { playerId }
-//   };
-
-//   CardActionService.coup(cardAction);
-
-//   res.status(200).send({});
-// });
-
-// router.post('/api/card-action/CorruptionInvestigation', (req, res) => {
-//   const { selectedPlayerId } = req.body;
-
-//   const cardAction: CorruptionInvestigationAction = {
-//     name: 'CorruptionInvestigation',
-//     payload: { selectedPlayerId }
-//   };
-
-//   CardActionService.corruptionInvestigation(cardAction);
-
-//   res.status(200).send({});
-// });
+  static getResponse(room: Room, eventName: CardEventAction, payload?: any): WssPartialResponse {
+    switch (eventName) {
+      case 'startAction':
+        return this.startAction(payload.card);
+      case 'endAction':
+        return this.endAction(payload.card);
+    }
+  }
+}

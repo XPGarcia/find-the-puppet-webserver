@@ -1,55 +1,55 @@
-﻿id;type;title;body;quickPlay
-1;law;Ley libre;Crea tu propia ley y proponla para votación;false
-2;law;Ley libre;Crea tu propia ley y proponla para votación;false
-3;law;Ley libre;Crea tu propia ley y proponla para votación;false
-4;law;Ley libre;Crea tu propia ley y proponla para votación;false
-5;law;Ley libre;Crea tu propia ley y proponla para votación;false
-6;law;Ley libre;Crea tu propia ley y proponla para votación;false
-7;law;Ley libre;Crea tu propia ley y proponla para votación;false
-8;law;Ley libre;Crea tu propia ley y proponla para votación;false
-9;law;Ley libre;Crea tu propia ley y proponla para votación;false
-10;law;Ley libre;Crea tu propia ley y proponla para votación;false
-11;law;Ley libre;Crea tu propia ley y proponla para votación;false
-12;law;Ley libre;Crea tu propia ley y proponla para votación;false
-13;law;Ley libre;Crea tu propia ley y proponla para votación;false
-14;law;Ley libre;Crea tu propia ley y proponla para votación;false
-15;law;Ley libre;Crea tu propia ley y proponla para votación;false
-16;law;Ley libre;Crea tu propia ley y proponla para votación;false
-17;law;Ley libre;Crea tu propia ley y proponla para votación;false
-18;law;Ley libre;Crea tu propia ley y proponla para votación;false
-19;law;Ley libre;Crea tu propia ley y proponla para votación;false
-20;law;Ley libre;Crea tu propia ley y proponla para votación;false
-21;law;Ley libre;Crea tu propia ley y proponla para votación;false
-22;law;Ley libre;Crea tu propia ley y proponla para votación;false
-23;law;Ley libre;Crea tu propia ley y proponla para votación;false
-24;law;Ley libre;Crea tu propia ley y proponla para votación;false
-25;law;Ley libre;Crea tu propia ley y proponla para votación;false
-26;law;Ley libre;Crea tu propia ley y proponla para votación;false
-27;law;Ley libre;Crea tu propia ley y proponla para votación;false
-28;law;Ley libre;Crea tu propia ley y proponla para votación;false
-29;law;Ley libre;Crea tu propia ley y proponla para votación;false
-30;law;Ley libre;Crea tu propia ley y proponla para votación;false
-31;law;Ley libre;Crea tu propia ley y proponla para votación;false
-32;law;Ley libre;Crea tu propia ley y proponla para votación;false
-33;law;Ley libre;Crea tu propia ley y proponla para votación;false
-34;action;¡Golpe de estado!;El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones;false
-35;action;¡Golpe de estado!;El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones;false
-36;action;¡Golpe de estado!;El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones;false
-37;action;¡Investigación por corrupción!;El participante no podrá crear leyes nuevas;false
-38;action;¡Investigación por corrupción!;El participante no podrá crear leyes nuevas;false
-41;action;Poder presidencial;Aprobar una ley sin el voto de los otros participantes;false
-42;action;Poder presidencial;Aprobar una ley sin el voto de los otros participantes;false
-43;action;¡MK ultra!;El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición;false
-44;action;¡MK ultra!;El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición;false
-47;action;¡Fraude!;Elimina una ley que haya sido aprobada;false
-48;action;¡Fraude!;Elimina una ley que haya sido aprobada;false
-49;action;Paquetazo;Si se aprueba una ley puedes solicitar inmediatamente aprobar una de tus leyes;true
-50;action;Paquetazo;Si se aprueba una ley puedes solicitar inmediatamente aprobar una de tus leyes;true
-60;action;Inversión arriesgada;Baraja cartas de tu mano en la baraja. Coge la misma cantidad de cartas que introdujiste ;false
-61;action;Inversión arriesgada;Baraja cartas de tu mano en la baraja. Coge la misma cantidad de cartas que introdujiste ;false
-62;action;Verdugo;Solicita expulsar a alguien del juego. Tu voto vale x3 durante esta votación;false
-63;action;Verdugo;Solicita expulsar a alguien del juego. Tu voto vale x3 durante esta votación;false
-68;action;Regreso del Abdalá;Trae de regreso a un jugador que haya sido eliminado del juego. El siguiente turno es de este jugador;false
-69;action;Rompiendo el sistema;Roba dos cartas de Ley libre en la baraja y ponlas en tu mano;false
-70;action;Rompiendo el sistema;Roba dos cartas de Ley libre en la baraja y ponlas en tu mano;false
-71;action;Rompiendo el sistema;Roba dos cartas de Ley libre en la baraja y ponlas en tu mano;false
+﻿id;type;code;title;body;quickPlay
+1;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+2;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+3;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+4;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+5;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+6;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+7;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+8;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+9;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+10;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+11;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+12;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+13;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+14;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+15;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+16;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+17;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+18;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+19;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+20;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+21;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+22;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+23;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+24;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+25;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+26;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+27;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+28;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+29;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+30;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+31;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+32;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+33;law;freeLaw;Ley libre;Crea tu propia ley y proponla para votación;false
+34;action;coup;¡Golpe de estado!;El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones;false
+35;action;coup;¡Golpe de estado!;El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones;false
+36;action;coup;¡Golpe de estado!;El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones;false
+37;action;corruptionInvestigation;¡Investigación por corrupción!;El participante no podrá crear leyes nuevas;false
+38;action;corruptionInvestigation;¡Investigación por corrupción!;El participante no podrá crear leyes nuevas;false
+41;action;presidentialPower;Poder presidencial;Aprobar una ley sin el voto de los otros participantes;false
+42;action;presidentialPower;Poder presidencial;Aprobar una ley sin el voto de los otros participantes;false
+43;action;mkUltra;¡MK ultra!;El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición;false
+44;action;mkUltra;¡MK ultra!;El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición;false
+47;action;fraud;¡Fraude!;Elimina una ley que haya sido aprobada;false
+48;action;fraud;¡Fraude!;Elimina una ley que haya sido aprobada;false
+49;action;paquetazo;Paquetazo;Si se aprueba una ley puedes solicitar inmediatamente aprobar una de tus leyes;true
+50;action;paquetazo;Paquetazo;Si se aprueba una ley puedes solicitar inmediatamente aprobar una de tus leyes;true
+60;action;riskyInvestment;Inversión arriesgada;Baraja cartas de tu mano en la baraja. Coge la misma cantidad de cartas que introdujiste ;false
+61;action;riskyInvestment;Inversión arriesgada;Baraja cartas de tu mano en la baraja. Coge la misma cantidad de cartas que introdujiste ;false
+62;action;executioner;Verdugo;Solicita expulsar a alguien del juego. Tu voto vale x3 durante esta votación;false
+63;action;executioner;Verdugo;Solicita expulsar a alguien del juego. Tu voto vale x3 durante esta votación;false
+68;action;returnOfAbdala;Regreso del Abdalá;Trae de regreso a un jugador que haya sido eliminado del juego. El siguiente turno es de este jugador;false
+69;action;breakingTheSystem;Rompiendo el sistema;Roba dos cartas de Ley libre en la baraja y ponlas en tu mano;false
+70;action;breakingTheSystem;Rompiendo el sistema;Roba dos cartas de Ley libre en la baraja y ponlas en tu mano;false
+71;action;breakingTheSystem;Rompiendo el sistema;Roba dos cartas de Ley libre en la baraja y ponlas en tu mano;false

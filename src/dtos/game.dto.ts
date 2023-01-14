@@ -12,5 +12,6 @@ export interface GameResponse {
   approvedLaws: ApprovedLaw[];
   governmentPlayers: string[];
   oppositionPlayers: string[];
+  blockedPlayers: string[];
   cardOnBoard?: Card;
 }

@@ -32,7 +32,8 @@ export class Room {
       governmentPlayers: [],
       oppositionPlayers: [],
       deck: [],
-      approvedLaws: []
+      approvedLaws: [],
+      blockedPlayers: []
     });
     this.votes = [];
     this.selectedPlayerVotes = [];

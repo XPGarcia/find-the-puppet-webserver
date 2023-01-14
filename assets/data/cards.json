@@ -2,6 +2,7 @@
   {
     "id": 1,
     "type": "law",
+    "code": "freeLaw",
     "title": "Ley libre",
     "body": "Crea tu propia ley y proponla para votación",
     "quickPlay": false
@@ -9,6 +10,7 @@
   {
     "id": 2,
     "type": "law",
+    "code": "freeLaw",
     "title": "Ley libre",
     "body": "Crea tu propia ley y proponla para votación",
     "quickPlay": false
@@ -16,6 +18,7 @@
   {
     "id": 3,
     "type": "law",
+    "code": "freeLaw",
     "title": "Ley libre",
     "body": "Crea tu propia ley y proponla para votación",
     "quickPlay": false
@@ -23,6 +26,7 @@
   {
     "id": 4,
     "type": "law",
+    "code": "freeLaw",
     "title": "Ley libre",
     "body": "Crea tu propia ley y proponla para votación",
     "quickPlay": false
@@ -30,202 +34,7 @@
   {
     "id": 5,
     "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 6,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 7,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 8,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 9,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 10,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 11,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 12,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 13,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 14,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 15,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 16,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 17,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 18,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 19,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 20,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 21,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 22,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 23,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 24,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 25,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 26,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 27,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 28,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 29,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 30,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 31,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 32,
-    "type": "law",
-    "title": "Ley libre",
-    "body": "Crea tu propia ley y proponla para votación",
-    "quickPlay": false
-  },
-  {
-    "id": 33,
-    "type": "law",
+    "code": "freeLaw",
     "title": "Ley libre",
     "body": "Crea tu propia ley y proponla para votación",
     "quickPlay": false
@@ -233,6 +42,7 @@
   {
     "id": 34,
     "type": "action",
+    "code": "coup",
     "title": "¡Golpe de estado!",
     "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
     "quickPlay": false
@@ -240,6 +50,7 @@
   {
     "id": 35,
     "type": "action",
+    "code": "coup",
     "title": "¡Golpe de estado!",
     "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
     "quickPlay": false
@@ -247,6 +58,7 @@
   {
     "id": 36,
     "type": "action",
+    "code": "coup",
     "title": "¡Golpe de estado!",
     "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
     "quickPlay": false
@@ -254,6 +66,7 @@
   {
     "id": 37,
     "type": "action",
+    "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
     "body": "El participante no podrá crear leyes nuevas",
     "quickPlay": false
@@ -261,27 +74,15 @@
   {
     "id": 38,
     "type": "action",
+    "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
     "body": "El participante no podrá crear leyes nuevas",
     "quickPlay": false
   },
   {
-    "id": 41,
-    "type": "action",
-    "title": "Poder presidencial",
-    "body": "Aprobar una ley sin el voto de los otros participantes",
-    "quickPlay": false
-  },
-  {
-    "id": 42,
-    "type": "action",
-    "title": "Poder presidencial",
-    "body": "Aprobar una ley sin el voto de los otros participantes",
-    "quickPlay": false
-  },
-  {
     "id": 43,
     "type": "action",
+    "code": "mkUltra",
     "title": "¡MK ultra!",
     "body": "El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición",
     "quickPlay": false
@@ -289,92 +90,9 @@
   {
     "id": 44,
     "type": "action",
+    "code": "mkUltra",
     "title": "¡MK ultra!",
     "body": "El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición",
-    "quickPlay": false
-  },
-  {
-    "id": 47,
-    "type": "action",
-    "title": "¡Fraude!",
-    "body": "Elimina una ley que haya sido aprobada",
-    "quickPlay": false
-  },
-  {
-    "id": 48,
-    "type": "action",
-    "title": "¡Fraude!",
-    "body": "Elimina una ley que haya sido aprobada",
-    "quickPlay": false
-  },
-  {
-    "id": 49,
-    "type": "action",
-    "title": "Paquetazo",
-    "body": "Si se aprueba una ley puedes solicitar inmediatamente aprobar una de tus leyes",
-    "quickPlay": true
-  },
-  {
-    "id": 50,
-    "type": "action",
-    "title": "Paquetazo",
-    "body": "Si se aprueba una ley puedes solicitar inmediatamente aprobar una de tus leyes",
-    "quickPlay": true
-  },
-  {
-    "id": 60,
-    "type": "action",
-    "title": "Inversión arriesgada",
-    "body": "Baraja cartas de tu mano en la baraja. Coge la misma cantidad de cartas que introdujiste",
-    "quickPlay": false
-  },
-  {
-    "id": 61,
-    "type": "action",
-    "title": "Inversión arriesgada",
-    "body": "Baraja cartas de tu mano en la baraja. Coge la misma cantidad de cartas que introdujiste",
-    "quickPlay": false
-  },
-  {
-    "id": 62,
-    "type": "action",
-    "title": "Verdugo",
-    "body": "Solicita expulsar a alguien del juego. Tu voto vale x3 durante esta votación",
-    "quickPlay": false
-  },
-  {
-    "id": 63,
-    "type": "action",
-    "title": "Verdugo",
-    "body": "Solicita expulsar a alguien del juego. Tu voto vale x3 durante esta votación",
-    "quickPlay": false
-  },
-  {
-    "id": 68,
-    "type": "action",
-    "title": "Regreso del Abdalá",
-    "body": "Trae de regreso a un jugador que haya sido eliminado del juego. El siguiente turno es de este jugador",
-    "quickPlay": false
-  },
-  {
-    "id": 69,
-    "type": "action",
-    "title": "Rompiendo el sistema",
-    "body": "Roba dos cartas de Ley libre en la baraja y ponlas en tu mano",
-    "quickPlay": false
-  },
-  {
-    "id": 70,
-    "type": "action",
-    "title": "Rompiendo el sistema",
-    "body": "Roba dos cartas de Ley libre en la baraja y ponlas en tu mano",
-    "quickPlay": false
-  },
-  {
-    "id": 71,
-    "type": "action",
-    "title": "Rompiendo el sistema",
-    "body": "Roba dos cartas de Ley libre en la baraja y ponlas en tu mano",
     "quickPlay": false
   }
 ]

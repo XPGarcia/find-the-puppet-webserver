@@ -4,7 +4,7 @@ import { GameMapper } from '../mappers';
 import { Game } from '../models';
 import { GameService } from '../services';
 
-const gameEventActions = ['start', 'endTurn'] as const;
+const gameEventActions = ['start', 'endTurn', 'update'] as const;
 
 export type GameEventAction = typeof gameEventActions[number];
 
@@ -22,11 +22,12 @@ export class GameEvents {
       playerAsPresident,
       turnsPlayed: 0,
       roundsPlayed: 0,
-      roundsForNextElections: 2,
+      roundsForNextElections: 4,
       governmentPlayers,
       oppositionPlayers,
       deck,
-      approvedLaws: []
+      approvedLaws: [],
+      blockedPlayers: []
     });
     GameService.setGame(room, game);
     const gameResponse = GameMapper.toResponse(room.game);
@@ -53,12 +54,28 @@ export class GameEvents {
     };
   }
 
-  static getResponse(room: Room, eventName: GameEventAction): WssPartialResponse {
+  private static update(room: Room, game: Game): WssPartialResponse {
+    GameService.setGame(room, { ...game });
+    const gameStatus = GameService.checkWinConditionByLaws(room.game);
+
+    const gameResponse = GameMapper.toResponse(room.game);
+
+    return {
+      responseType: 'game',
+      message: JSON.stringify(gameResponse),
+      communicationType: 'broadcast',
+      status: gameStatus
+    };
+  }
+
+  static getResponse(room: Room, eventName: GameEventAction, payload: any): WssPartialResponse {
     switch (eventName) {
       case 'start':
         return this.start(room);
       case 'endTurn':
         return this.endTurn(room);
+      case 'update':
+        return this.update(room, payload.game);
     }
   }
 }

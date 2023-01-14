@@ -1,6 +1,7 @@
 /* eslint-disable no-case-declarations */
 import { ClientMessage, WssPartialResponse, WssResponse } from './dtos';
 import {
+  CardEventManager,
   DeckEventAction,
   DeckEventManager,
   GameEventAction,
@@ -9,7 +10,7 @@ import {
   VotingEventAction,
   VotingEventManager
 } from './events';
-import { RoomEventAction } from './events';
+import { RoomEventAction, CardEventAction } from './events';
 import { Room } from './models';
 
 export class EventListener {
@@ -31,7 +32,7 @@ export class EventListener {
         return RoomEventManager.getResponse(roomEventName, message.payload);
       case 'game':
         const gameEventName = message.action as GameEventAction;
-        partialResponse = GameEvents.getResponse(room, gameEventName);
+        partialResponse = GameEvents.getResponse(room, gameEventName, message.payload);
         break;
       case 'deck':
         const deckEventName = message.action as DeckEventAction;
@@ -40,6 +41,10 @@ export class EventListener {
       case 'voting':
         const votingEventName = message.action as VotingEventAction;
         partialResponse = VotingEventManager.getResponse(room, votingEventName, message.payload);
+        break;
+      case 'card':
+        const cardEventName = message.action as CardEventAction;
+        partialResponse = CardEventManager.getResponse(room, cardEventName, message.payload);
         break;
     }
 
