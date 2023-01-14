@@ -54,7 +54,7 @@ export class GameEvents {
     };
   }
 
-  private static update(room: Room, game: Game): WssPartialResponse {
+  private static update(room: Room, game: Game, message?: string): WssPartialResponse {
     GameService.setGame(room, { ...game });
     const gameStatus = GameService.checkWinConditionByLaws(room.game);
 
@@ -62,7 +62,7 @@ export class GameEvents {
 
     return {
       responseType: 'game',
-      message: JSON.stringify(gameResponse),
+      message: JSON.stringify({ ...gameResponse, message }),
       communicationType: 'broadcast',
       status: gameStatus
     };
@@ -75,7 +75,7 @@ export class GameEvents {
       case 'endTurn':
         return this.endTurn(room);
       case 'update':
-        return this.update(room, payload.game);
+        return this.update(room, payload.game, payload.message);
     }
   }
 }

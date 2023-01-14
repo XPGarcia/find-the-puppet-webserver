@@ -70,8 +70,9 @@ export class VotingEventManager {
     };
     if (room.selectedPlayerVotes.length === room.game.players.length) {
       const selectedPlayer = room.countSelectedPlayerVotes();
-      room.game.eliminatePlayer(selectedPlayer);
-      response.message = JSON.stringify({ game: GameMapper.toResponse(room.game) });
+      const eliminatedPlayer = room.game.eliminatePlayer(selectedPlayer);
+      const message = eliminatedPlayer && `${eliminatedPlayer.playerName} fue eliminado`;
+      response.message = JSON.stringify({ game: GameMapper.toResponse(room.game), message });
       response.communicationType = 'broadcast';
       response.status = GameService.checkWinConditionByPlayers(room.game);
     }
@@ -101,8 +102,9 @@ export class VotingEventManager {
     };
     if (room.selectedPlayerVotes.length === room.game.players.length) {
       const selectedPlayerId = room.countSelectedPlayerVotes();
-      room.game.changePresident(selectedPlayerId);
-      response.message = JSON.stringify({ game: GameMapper.toResponse(room.game) });
+      const selectedPresident = room.game.changePresident(selectedPlayerId);
+      const message = selectedPresident && `${selectedPresident.playerName} es el presidente`;
+      response.message = JSON.stringify({ game: GameMapper.toResponse(room.game), message });
       response.communicationType = 'broadcast';
       response.status = GameService.checkWinConditionByLaws(room.game);
     }

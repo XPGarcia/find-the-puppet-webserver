@@ -82,28 +82,30 @@ export class Game {
 
   eliminatePlayer(eliminatedPlayerId: string) {
     const index = this.players.findIndex((player) => player.playerId === eliminatedPlayerId);
-    this.players = this.players.filter(
-      (player) => player.playerId.toString() !== eliminatedPlayerId
-    );
+    const eliminatedPlayer = this.players[index];
+
+    this.players = this.players.filter((player) => player.playerId !== eliminatedPlayerId);
     if (eliminatedPlayerId === this.playerAsPresident) this.playerAsPresident = '';
     if (eliminatedPlayerId === this.playerInTurn) {
       const nextIndex = index >= this.players.length ? 0 : index;
       this.playerInTurn = this.players[nextIndex].playerId;
     }
     this.numberOfPlayers = this.players.length;
+    return eliminatedPlayer;
   }
 
   changePresident(selectedPresidentId: string) {
     if (selectedPresidentId) {
       this.playerAsPresident = selectedPresidentId;
-      return;
+      return this.players.find((player) => player.playerId === selectedPresidentId);
     }
 
-    let randomPresidentId = random(this.players).playerId;
+    let randomPresident = random(this.players);
     // eslint-disable-next-line no-loops/no-loops
-    while (randomPresidentId === this.playerAsPresident)
-      randomPresidentId = random(this.players).playerId;
+    while (randomPresident.playerId === this.playerAsPresident)
+      randomPresident = random(this.players);
 
-    this.playerAsPresident = randomPresidentId;
+    this.playerAsPresident = randomPresident.playerId;
+    return randomPresident;
   }
 }

@@ -40,6 +40,46 @@
     "quickPlay": false
   },
   {
+    "id": 1,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 2,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 3,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 4,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 5,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
     "id": 34,
     "type": "action",
     "code": "coup",
