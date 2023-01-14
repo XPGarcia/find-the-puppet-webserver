@@ -14,8 +14,17 @@ export type VotingEventAction =
 let playerStartedVoting: Player;
 
 export class VotingEventManager {
-  private static startLawVoting(player: Player, card: Card): WssPartialResponse {
+  private static startLawVoting(room: Room, player: Player, card: Card): WssPartialResponse {
     playerStartedVoting = player;
+    if (room.game.handleBlockedPlayer(playerStartedVoting)) {
+      const message = `${player.playerName} ya no está bloqueado`;
+      return {
+        responseType: 'voting',
+        message: JSON.stringify({ card, message }),
+        communicationType: 'broadcast'
+      };
+    }
+
     return {
       responseType: 'voting',
       message: JSON.stringify({ card }),
@@ -114,7 +123,7 @@ export class VotingEventManager {
   static getResponse(room: Room, eventName: VotingEventAction, payload?: any): WssPartialResponse {
     switch (eventName) {
       case 'startLawVoting':
-        return this.startLawVoting(payload.player, payload.card);
+        return this.startLawVoting(room, payload.player, payload.card);
       case 'collectVoteForLawVoting':
         return this.collectVoteForLawVoting(room, payload.playerId, payload.vote, payload.card);
       case 'startEliminateVoting':

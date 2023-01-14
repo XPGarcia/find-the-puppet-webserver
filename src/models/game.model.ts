@@ -108,4 +108,12 @@ export class Game {
     this.playerAsPresident = randomPresident.playerId;
     return randomPresident;
   }
+
+  handleBlockedPlayer(player: Player) {
+    const blockedPlayerId = this.blockedPlayers.find((playerId) => playerId === player.playerId);
+    if (!blockedPlayerId) return;
+
+    this.blockedPlayers = this.blockedPlayers.filter((playerId) => playerId !== blockedPlayerId);
+    return blockedPlayerId;
+  }
 }
