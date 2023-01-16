@@ -14,11 +14,9 @@ export class GameService {
 
     const gpOne = random<string>(playersIds);
     const gpTwo = random<string>(playersIds.filter((id) => id !== gpOne));
-    // const governmentPlayers = [gpOne, gpTwo];
-    const governmentPlayers = [gpOne];
+    const governmentPlayers = [gpOne, gpTwo];
 
-    // const oppositionPlayers = playersIds.filter((id) => id !== gpOne && id !== gpTwo);
-    const oppositionPlayers = playersIds.filter((id) => id !== gpOne);
+    const oppositionPlayers = playersIds.filter((id) => id !== gpOne && id !== gpTwo);
 
     const playerAsPresident = random<string>(playersIds);
 
@@ -100,14 +98,14 @@ export class GameService {
   }
 
   static checkWinConditionByPlayers(game: Game): 'DEMOCRATS_WON' | 'FASCISTS_WON' | undefined {
-    // let democratPlayers = 0;
-    // let fascistPlayers = 0;
-    // game.players.forEach((player) => {
-    //   if (game.governmentPlayers.find((playerId) => playerId === player.playerId)) fascistPlayers++;
-    //   else democratPlayers++;
-    // });
-    // if (fascistPlayers === 0) return 'DEMOCRATS_WON';
-    // else if (democratPlayers === 0) return 'FASCISTS_WON';
+    let democratPlayers = 0;
+    let fascistPlayers = 0;
+    game.players.forEach((player) => {
+      if (game.governmentPlayers.find((playerId) => playerId === player.playerId)) fascistPlayers++;
+      else democratPlayers++;
+    });
+    if (fascistPlayers === 0) return 'DEMOCRATS_WON';
+    else if (democratPlayers === 0) return 'FASCISTS_WON';
     return;
   }
 }

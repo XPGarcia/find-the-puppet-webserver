@@ -29,6 +29,8 @@ export class RoomEventManager {
 
   static joinRoom(roomId: string, playerId: string, playerName: string): WssResponse {
     const room = this.getRoom(roomId);
+    if (room.clients.length === 5) throw new Error('Maximum length of players in room');
+
     room.newClientJoined(playerId, playerName);
     return {
       responseType: 'room',

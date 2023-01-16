@@ -40,7 +40,199 @@
     "quickPlay": false
   },
   {
+    "id": 6,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 7,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 8,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 9,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 10,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 11,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 12,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 13,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 14,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 15,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 16,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 17,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 18,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 19,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 20,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 21,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 22,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 23,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 24,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 34,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 35,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 36,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
     "id": 37,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 38,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 39,
     "type": "action",
     "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
@@ -48,7 +240,7 @@
     "quickPlay": false
   },
   {
-    "id": 38,
+    "id": 40,
     "type": "action",
     "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
@@ -58,17 +250,41 @@
   {
     "id": 41,
     "type": "action",
-    "code": "presidentialPower",
-    "title": "Poder presidencial",
-    "body": "Aprobar una ley sin el voto de los otros participantes",
+    "code": "corruptionInvestigation",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
     "quickPlay": false
   },
   {
     "id": 42,
     "type": "action",
-    "code": "presidentialPower",
-    "title": "Poder presidencial",
-    "body": "Aprobar una ley sin el voto de los otros participantes",
+    "code": "corruptionInvestigation",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 43,
+    "type": "action",
+    "code": "corruptionInvestigation",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 44,
+    "type": "action",
+    "code": "mkUltra",
+    "title": "¡MK ultra!",
+    "body": "El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición",
+    "quickPlay": false
+  },
+  {
+    "id": 45,
+    "type": "action",
+    "code": "mkUltra",
+    "title": "¡MK ultra!",
+    "body": "El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición",
     "quickPlay": false
   }
 ]
