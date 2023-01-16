@@ -13,10 +13,11 @@ export class GameService {
     const deck = DeckService.new();
 
     const gpOne = random<string>(playersIds);
-    const gpTwo = random<string>(playersIds.filter((id) => id !== gpOne));
-    const governmentPlayers = [gpOne, gpTwo];
+    // const gpTwo = random<string>(playersIds.filter((id) => id !== gpOne));
+    const governmentPlayers = [gpOne];
 
-    const oppositionPlayers = playersIds.filter((id) => id !== gpOne && id !== gpTwo);
+    // const oppositionPlayers = playersIds.filter((id) => id !== gpOne && id !== gpTwo);
+    const oppositionPlayers = playersIds.filter((id) => id !== gpOne);
 
     const playerAsPresident = random<string>(playersIds);
 
