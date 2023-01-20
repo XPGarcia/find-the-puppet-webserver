@@ -13,11 +13,10 @@ export class GameService {
     const deck = DeckService.new();
 
     const gpOne = random<string>(playersIds);
-    // const gpTwo = random<string>(playersIds.filter((id) => id !== gpOne));
-    const governmentPlayers = [gpOne];
+    const gpTwo = random<string>(playersIds.filter((id) => id !== gpOne));
+    const governmentPlayers = [gpOne, gpTwo];
 
-    // const oppositionPlayers = playersIds.filter((id) => id !== gpOne && id !== gpTwo);
-    const oppositionPlayers = playersIds.filter((id) => id !== gpOne);
+    const oppositionPlayers = playersIds.filter((id) => id !== gpOne && id !== gpTwo);
 
     const playerAsPresident = random<string>(playersIds);
 
@@ -87,8 +86,8 @@ export class GameService {
   }
 
   private static fascistsWonByApprovedLaws(approvedLaws: number, game: Game) {
-    const fascistLawsToWin = 6;
-    const fascistLawsToWinWithPresident = 4;
+    const fascistLawsToWin = 5;
+    const fascistLawsToWinWithPresident = 3;
     const isFascistPresident = game.governmentPlayers.find(
       (playerId) => playerId === game.playerAsPresident
     );
