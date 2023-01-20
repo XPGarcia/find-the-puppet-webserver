@@ -4,14 +4,14 @@ import * as https from 'https';
 import * as http from 'http';
 import * as fs from 'fs';
 
-// const serverOptions = {
-//   cert: fs.readFileSync(environment.certificatePath),
-//   key: fs.readFileSync(environment.keyPath)
-// };
+const serverOptions = {
+  cert: fs.readFileSync(environment.certificatePath),
+  key: fs.readFileSync(environment.keyPath)
+};
 
-// export const server = https.createServer(serverOptions, app);
+export const server = https.createServer(serverOptions, app);
 
-export const server = http.createServer(app);
+// export const server = http.createServer(app);
 
 export const start = () => {
   // 8443
