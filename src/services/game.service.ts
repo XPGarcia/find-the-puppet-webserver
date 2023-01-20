@@ -82,13 +82,13 @@ export class GameService {
   }
 
   private static democratsWonByApprovedLaws(approvedLaws: number) {
-    const democratLawsToWin = 5;
+    const democratLawsToWin = 8;
     return approvedLaws >= democratLawsToWin;
   }
 
   private static fascistsWonByApprovedLaws(approvedLaws: number, game: Game) {
-    const fascistLawsToWin = 3;
-    const fascistLawsToWinWithPresident = 2;
+    const fascistLawsToWin = 6;
+    const fascistLawsToWinWithPresident = 4;
     const isFascistPresident = game.governmentPlayers.find(
       (playerId) => playerId === game.playerAsPresident
     );
