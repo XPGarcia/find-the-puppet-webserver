@@ -80,59 +80,399 @@
     "quickPlay": false
   },
   {
+    "id": 1,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 2,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 3,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 4,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 5,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 6,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 7,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 8,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 9,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 10,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 1,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 2,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 3,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 4,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 5,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 6,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 7,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 8,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 9,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 10,
+    "type": "law",
+    "code": "freeLaw",
+    "title": "Ley libre",
+    "body": "Crea tu propia ley y proponla para votación",
+    "quickPlay": false
+  },
+  {
+    "id": 30,
+    "type": "action",
+    "code": "presidentialPower",
+    "title": "Poder presidencial",
+    "body": "Aprobar una ley sin el voto de los otros participantes",
+    "quickPlay": false
+  },
+  {
+    "id": 31,
+    "type": "action",
+    "code": "presidentialPower",
+    "title": "Poder presidencial",
+    "body": "Aprobar una ley sin el voto de los otros participantes",
+    "quickPlay": false
+  },
+  {
+    "id": 32,
+    "type": "action",
+    "code": "presidentialPower",
+    "title": "Poder presidencial",
+    "body": "Aprobar una ley sin el voto de los otros participantes",
+    "quickPlay": false
+  },
+  {
+    "id": 33,
+    "type": "action",
+    "code": "presidentialPower",
+    "title": "Poder presidencial",
+    "body": "Aprobar una ley sin el voto de los otros participantes",
+    "quickPlay": false
+  },
+  {
+    "id": 34,
+    "type": "action",
+    "code": "presidentialPower",
+    "title": "Poder presidencial",
+    "body": "Aprobar una ley sin el voto de los otros participantes",
+    "quickPlay": false
+  },
+  {
+    "id": 35,
+    "type": "action",
+    "code": "presidentialPower",
+    "title": "Poder presidencial",
+    "body": "Aprobar una ley sin el voto de los otros participantes",
+    "quickPlay": false
+  },
+  {
+    "id": 36,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 37,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 38,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 39,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 40,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 41,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 42,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 43,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 43,
+    "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
     "id": 44,
     "type": "action",
-    "code": "mkUltra",
-    "title": "¡MK ultra!",
-    "body": "El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
     "quickPlay": false
   },
   {
     "id": 45,
     "type": "action",
+    "code": "coup",
+    "title": "¡Golpe de estado!",
+    "body": "El presidente deja el cargo y el que tiene la carta se vuelve el presidente interino hasta las siguientes elecciones",
+    "quickPlay": false
+  },
+  {
+    "id": 46,
+    "type": "action",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 47,
+    "type": "action",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 48,
+    "type": "action",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 49,
+    "type": "action",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 50,
+    "type": "action",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 51,
+    "type": "action",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 52,
+    "type": "action",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 53,
+    "type": "action",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 54,
+    "type": "action",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 55,
+    "type": "action",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 56,
+    "type": "action",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 57,
+    "type": "action",
+    "title": "¡Investigación por corrupción!",
+    "body": "El participante no podrá crear leyes nuevas",
+    "quickPlay": false
+  },
+  {
+    "id": 59,
+    "type": "action",
     "code": "mkUltra",
     "title": "¡MK ultra!",
     "body": "El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición",
     "quickPlay": false
   },
   {
-    "id": 50,
+    "id": 60,
     "type": "action",
-    "code": "presidentialPower",
-    "title": "Poder presidencial",
-    "body": "Aprobar una ley sin el voto de los otros participantes",
-    "quickPlay": false
-  },
-  {
-    "id": 51,
-    "type": "action",
-    "code": "presidentialPower",
-    "title": "Poder presidencial",
-    "body": "Aprobar una ley sin el voto de los otros participantes",
-    "quickPlay": false
-  },
-  {
-    "id": 52,
-    "type": "action",
-    "code": "presidentialPower",
-    "title": "Poder presidencial",
-    "body": "Aprobar una ley sin el voto de los otros participantes",
-    "quickPlay": false
-  },
-  {
-    "id": 53,
-    "type": "action",
-    "code": "presidentialPower",
-    "title": "Poder presidencial",
-    "body": "Aprobar una ley sin el voto de los otros participantes",
-    "quickPlay": false
-  },
-  {
-    "id": 54,
-    "type": "action",
-    "code": "presidentialPower",
-    "title": "Poder presidencial",
-    "body": "Aprobar una ley sin el voto de los otros participantes",
+    "code": "mkUltra",
+    "title": "¡MK ultra!",
+    "body": "El jugador tiene el poder de escoger a alguien para que le diga la verdad absoluta de su posición",
     "quickPlay": false
   }
 ]

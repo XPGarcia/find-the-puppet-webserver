@@ -12,7 +12,11 @@ export class Room {
     'anarchist_cat.png',
     'communist_monkey.png',
     'priest_fox.png',
-    'patrick.png'
+    'socialist_goose.png',
+    'politician_rat.png',
+    'general_dog.png',
+    'folk_chicken.png',
+    'banker_cow.png'
   ];
   votes: { playerId: string; vote: Vote }[];
   selectedPlayerVotes: { playerId: string; selectedPlayerId: string }[];
