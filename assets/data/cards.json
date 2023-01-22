@@ -378,6 +378,7 @@
   {
     "id": 46,
     "type": "action",
+    "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
     "body": "El participante no podrá crear leyes nuevas",
     "quickPlay": false
@@ -385,6 +386,7 @@
   {
     "id": 47,
     "type": "action",
+    "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
     "body": "El participante no podrá crear leyes nuevas",
     "quickPlay": false
@@ -392,6 +394,7 @@
   {
     "id": 48,
     "type": "action",
+    "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
     "body": "El participante no podrá crear leyes nuevas",
     "quickPlay": false
@@ -399,6 +402,7 @@
   {
     "id": 49,
     "type": "action",
+    "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
     "body": "El participante no podrá crear leyes nuevas",
     "quickPlay": false
@@ -406,6 +410,7 @@
   {
     "id": 50,
     "type": "action",
+    "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
     "body": "El participante no podrá crear leyes nuevas",
     "quickPlay": false
@@ -413,6 +418,7 @@
   {
     "id": 51,
     "type": "action",
+    "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
     "body": "El participante no podrá crear leyes nuevas",
     "quickPlay": false
@@ -420,6 +426,7 @@
   {
     "id": 52,
     "type": "action",
+    "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
     "body": "El participante no podrá crear leyes nuevas",
     "quickPlay": false
@@ -427,6 +434,7 @@
   {
     "id": 53,
     "type": "action",
+    "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
     "body": "El participante no podrá crear leyes nuevas",
     "quickPlay": false
@@ -434,27 +442,7 @@
   {
     "id": 54,
     "type": "action",
-    "title": "¡Investigación por corrupción!",
-    "body": "El participante no podrá crear leyes nuevas",
-    "quickPlay": false
-  },
-  {
-    "id": 55,
-    "type": "action",
-    "title": "¡Investigación por corrupción!",
-    "body": "El participante no podrá crear leyes nuevas",
-    "quickPlay": false
-  },
-  {
-    "id": 56,
-    "type": "action",
-    "title": "¡Investigación por corrupción!",
-    "body": "El participante no podrá crear leyes nuevas",
-    "quickPlay": false
-  },
-  {
-    "id": 57,
-    "type": "action",
+    "code": "corruptionInvestigation",
     "title": "¡Investigación por corrupción!",
     "body": "El participante no podrá crear leyes nuevas",
     "quickPlay": false
