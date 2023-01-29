@@ -8,15 +8,34 @@ export class Room {
   clients: { playerId: string; playerName: string; playerProfile: string }[];
   game: Game;
   profiles = [
-    'capitalist_pig.png',
-    'anarchist_cat.png',
-    'communist_monkey.png',
-    'priest_fox.png',
-    'socialist_goose.png',
-    'politician_rat.png',
-    'general_dog.png',
-    'folk_chicken.png',
-    'banker_cow.png'
+    // 'capitalist_pig.png',
+    // 'anarchist_cat.png',
+    // 'communist_monkey.png',
+    // 'priest_fox.png',
+    // 'socialist_goose.png',
+    // 'politician_rat.png',
+    // 'general_dog.png',
+    // 'folk_chicken.png',
+    // 'banker_cow.png',
+    'player-1.png',
+    'player-2.png',
+    'player-3.png',
+    'player-4.png',
+    'player-5.png',
+    'player-6.png',
+    'player-7.png',
+    'player-8.png',
+    'player-9.png',
+    'player-10.png',
+    'player-11.png',
+    'player-12.png',
+    'player-13.png',
+    'player-14.png',
+    'player-15.png',
+    'player-16.png',
+    'player-17.png',
+    'player-18.png',
+    'player-19.png'
   ];
   votes: { playerId: string; vote: Vote }[];
   selectedPlayerVotes: { playerId: string; selectedPlayerId: string }[];

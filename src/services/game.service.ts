@@ -81,7 +81,7 @@ export class GameService {
   }
 
   private static democratsWonByApprovedLaws(approvedLaws: number) {
-    const democratLawsToWin = 8;
+    const democratLawsToWin = 7;
     return approvedLaws >= democratLawsToWin;
   }
 
